@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Users | Vanguard Enterprise Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <!-- Admin Sidebar Navigation -->
+    <aside class="dashboard-sidebar border-indigo-500/20">
+      <div>
+        <div class="sidebar-header bg-slate-950 text-white">
+          <a href="../index.html" class="brand-logo text-base">
+            <div class="logo-icon !w-8 !h-8 !text-base bg-indigo-600"><i class="bi bi-shield-lock-fill text-white"></i></div>
+            <span class="text-white">ADMIN<span class="text-indigo-400">.VANGUARD</span></span>
+          </a>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="sidebar-item"><a href="analytics.html" class="sidebar-link"><i class="bi bi-graph-up-arrow"></i> Revenue Analytics</a></li>
+          <li class="sidebar-item"><a href="users.html" class="sidebar-link active"><i class="bi bi-people"></i> Client Users</a></li>
+          <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><i class="bi bi-box-seam"></i> Order Manager</a></li>
+          <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-left-dots"></i> Messages & Support</a></li>
+        </ul>
+      </div>
+
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+        <a href="../login.html" class="w-full py-2.5 px-4 rounded-xl text-xs font-extrabold bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white flex items-center justify-center gap-2 transition-all border border-rose-500/20 shadow-sm">
+          <i class="bi bi-box-arrow-right text-sm"></i> Logout Dashboard
+        </a>
+      </div>
+    </aside>
+
+    <!-- Admin Main Body -->
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="flex items-center gap-3">
+          <button id="sidebarToggleBtn" class="lg:hidden control-btn"><i class="bi bi-list"></i></button>
+          <div class="dashboard-search hidden sm:block">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search client accounts...">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)"><span class="text-amber-500 font-extrabold">LTR</span><i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i><span class="opacity-60 text-slate-400">RTL</span></button>
+          <button class="control-btn theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
+
+          <div class="dashboard-user-dropdown ps-3 border-s border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Kavita Menon" class="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-md flex-shrink-0">
+            <div class="hidden md:block">
+              <div class="text-xs font-bold leading-none text-slate-900 dark:text-white">Kavita Menon</div>
+              <div class="text-[11px] text-indigo-500 dark:text-indigo-400 font-semibold">Platform Director</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card bg-slate-100/90 dark:bg-slate-900/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md">
+          <div>
+            <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="bi bi-people text-indigo-500"></i> Corporate Client Users Directory
+            </h1>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Manage enterprise procurement leads, corporate retainers, and GST validation status.</p>
+          </div>
+          <button onclick="openAddClientModal()" class="btn-gold text-xs !py-2 !px-4 font-extrabold flex items-center gap-1.5 shadow-lg shadow-amber-500/20"><i class="bi bi-person-plus"></i> Add Enterprise Client</button>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white font-extrabold text-[11px] uppercase">
+              <tr>
+                <th class="p-4">Company</th>
+                <th class="p-4">Procurement Lead</th>
+                <th class="p-4">Work Email</th>
+                <th class="p-4">Retainer Plan</th>
+                <th class="p-4">Total Orders</th>
+                <th class="p-4">Action</th>
+              </tr>
+            </thead>
+            <tbody id="clientTableBody" class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              <tr>
+                <td class="p-4 font-extrabold text-slate-900 dark:text-white">AXION Systems Inc.</td>
+                <td class="p-4 flex items-center gap-2 font-bold">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop" class="w-7 h-7 rounded-full object-cover border border-amber-500/40">
+                  Vikram Sharma
+                </td>
+                <td class="p-4">vikram@axiontech.com</td>
+                <td class="p-4"><span class="badge-gold text-[10px]">Business Retainer</span></td>
+                <td class="p-4 font-bold text-amber-500">12 POs</td>
+                <td class="p-4"><button onclick="openManageModal('AXION Systems Inc.', 'Vikram Sharma', 'vikram@axiontech.com', 'Business Retainer', '12 POs')" class="btn-outline !py-1 !px-3 text-xs font-bold hover:border-amber-500 hover:text-amber-500 transition-all">Manage Account</button></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-extrabold text-slate-900 dark:text-white">Innovate Labs Ltd.</td>
+                <td class="p-4 flex items-center gap-2 font-bold">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop" class="w-7 h-7 rounded-full object-cover border border-indigo-500/40">
+                  Ananya Roy
+                </td>
+                <td class="p-4">ananya@innovatelabs.io</td>
+                <td class="p-4"><span class="badge-indigo text-[10px]">Enterprise VIP</span></td>
+                <td class="p-4 font-bold text-indigo-400">8 POs</td>
+                <td class="p-4"><button onclick="openManageModal('Innovate Labs Ltd.', 'Ananya Roy', 'ananya@innovatelabs.io', 'Enterprise VIP', '8 POs')" class="btn-outline !py-1 !px-3 text-xs font-bold hover:border-indigo-400 hover:text-indigo-400 transition-all">Manage Account</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Enterprise Client Modal -->
+  <div id="addClientModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-card max-w-md w-full p-6 rounded-2xl border border-slate-700 bg-slate-900 text-white shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <h3 class="font-extrabold text-base text-white flex items-center gap-2">
+          <i class="bi bi-person-plus text-amber-500"></i> Add Enterprise Client Account
+        </h3>
+        <button onclick="closeAddClientModal()" class="text-slate-400 hover:text-white text-lg"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <form onsubmit="handleAddClientSubmit(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-400 mb-1">Company Name</label>
+          <input type="text" id="newCompanyName" required placeholder="e.g. Vertex Dynamics Ltd." class="w-full p-3 rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-400 mb-1">Procurement Lead Name</label>
+          <input type="text" id="newLeadName" required placeholder="e.g. Kavita Menon" class="w-full p-3 rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-400 mb-1">Corporate Work Email</label>
+          <input type="email" id="newWorkEmail" required placeholder="e.g. kavita@vertex.com" class="w-full p-3 rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-400 mb-1">Retainer Plan</label>
+            <select id="newRetainerPlan" class="w-full p-3 rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500">
+              <option value="Business Retainer">Business Retainer</option>
+              <option value="Enterprise VIP">Enterprise VIP</option>
+              <option value="Starter Package">Starter Package</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-400 mb-1">Initial PO Count</label>
+            <input type="number" id="newPOCount" value="1" min="1" class="w-full p-3 rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div class="pt-3 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeAddClientModal()" class="px-4 py-2.5 rounded-xl border border-slate-700 text-slate-300 font-bold hover:bg-slate-800">Cancel</button>
+          <button type="submit" class="btn-gold !py-2.5 !px-5 text-xs font-extrabold shadow-lg shadow-amber-500/20">Save Client Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Manage Account Modal -->
+  <div id="manageAccountModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-card max-w-lg w-full p-6 rounded-2xl border border-slate-700 bg-slate-900 text-white shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <h3 class="font-extrabold text-base text-white flex items-center gap-2">
+          <i class="bi bi-sliders text-indigo-400"></i> Manage Client Account
+        </h3>
+        <button onclick="closeManageModal()" class="text-slate-400 hover:text-white text-lg"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Company Name:</span>
+            <span id="manageCompanyName" class="font-extrabold text-white text-sm"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Procurement Lead:</span>
+            <span id="manageLeadName" class="font-bold text-amber-500"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Work Email:</span>
+            <span id="manageWorkEmail" class="text-slate-300"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Retainer Tier:</span>
+            <span id="manageRetainerPlan" class="badge-gold text-[10px]"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Active Orders:</span>
+            <span id="managePOCount" class="font-bold text-emerald-400"></span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5">
+          <button onclick="alert('Retainer tier upgraded successfully!')" class="p-3 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 font-bold border border-indigo-500/30 flex items-center justify-center gap-1.5">
+            <i class="bi bi-arrow-up-circle"></i> Upgrade Tier
+          </button>
+          <button onclick="alert('Password reset link sent to client email!')" class="p-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold border border-amber-500/30 flex items-center justify-center gap-1.5">
+            <i class="bi bi-key"></i> Reset Login Key
+          </button>
+        </div>
+
+        <div class="pt-2 flex justify-end">
+          <button onclick="closeManageModal()" class="btn-gold !py-2.5 !px-5 text-xs font-extrabold shadow-lg shadow-amber-500/20">Save & Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    function openAddClientModal() {
+      document.getElementById('addClientModal').classList.remove('hidden');
+    }
+
+    function closeAddClientModal() {
+      document.getElementById('addClientModal').classList.add('hidden');
+    }
+
+    function openManageModal(company, lead, email, plan, pos) {
+      document.getElementById('manageCompanyName').textContent = company;
+      document.getElementById('manageLeadName').textContent = lead;
+      document.getElementById('manageWorkEmail').textContent = email;
+      document.getElementById('manageRetainerPlan').textContent = plan;
+      document.getElementById('managePOCount').textContent = pos;
+      document.getElementById('manageAccountModal').classList.remove('hidden');
+    }
+
+    function closeManageModal() {
+      document.getElementById('manageAccountModal').classList.add('hidden');
+    }
+
+    function handleAddClientSubmit(e) {
+      e.preventDefault();
+      const compName = document.getElementById('newCompanyName').value;
+      const leadName = document.getElementById('newLeadName').value;
+      const workEmail = document.getElementById('newWorkEmail').value;
+      const plan = document.getElementById('newRetainerPlan').value;
+      const poCount = document.getElementById('newPOCount').value;
+
+      const tbody = document.getElementById('clientTableBody');
+      const tr = document.createElement('tr');
+      const badgeClass = plan.includes('Enterprise') ? 'badge-indigo' : 'badge-gold';
+
+      tr.innerHTML = `
+        <td class="p-4 font-extrabold text-slate-900 dark:text-white">${compName}</td>
+        <td class="p-4 flex items-center gap-2 font-bold">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" class="w-7 h-7 rounded-full object-cover border border-amber-500/40">
+          ${leadName}
+        </td>
+        <td class="p-4">${workEmail}</td>
+        <td class="p-4"><span class="${badgeClass} text-[10px]">${plan}</span></td>
+        <td class="p-4 font-bold text-amber-500">${poCount} POs</td>
+        <td class="p-4"><button onclick="openManageModal('${compName}', '${leadName}', '${workEmail}', '${plan}', '${poCount} POs')" class="btn-outline !py-1 !px-3 text-xs font-bold hover:border-amber-500 hover:text-amber-500 transition-all">Manage Account</button></td>
+      `;
+
+      tbody.insertBefore(tr, tbody.firstChild);
+      closeAddClientModal();
+    }
+  </script>
+</body>
+</html>

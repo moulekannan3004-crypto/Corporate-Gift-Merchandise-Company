@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages & Support | Vanguard Enterprise Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar border-indigo-500/20">
+      <div>
+        <div class="sidebar-header bg-slate-950 text-white">
+          <a href="../index.html" class="brand-logo text-base">
+            <div class="logo-icon !w-8 !h-8 !text-base bg-indigo-600"><i class="bi bi-shield-lock-fill text-white"></i></div>
+            <span class="text-white">ADMIN<span class="text-indigo-400">.VANGUARD</span></span>
+          </a>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="sidebar-item"><a href="analytics.html" class="sidebar-link"><i class="bi bi-graph-up-arrow"></i> Revenue Analytics</a></li>
+          <li class="sidebar-item"><a href="users.html" class="sidebar-link"><i class="bi bi-people"></i> Client Users</a></li>
+          <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><i class="bi bi-box-seam"></i> Order Manager</a></li>
+          <li class="sidebar-item"><a href="messages.html" class="sidebar-link active"><i class="bi bi-chat-left-dots"></i> Messages & Support</a></li>
+        </ul>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+        <a href="../login.html" class="w-full py-2.5 px-4 rounded-xl text-xs font-extrabold bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white flex items-center justify-center gap-2 transition-all border border-rose-500/20 shadow-sm">
+          <i class="bi bi-box-arrow-right text-sm"></i> Logout Dashboard
+        </a>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="flex items-center gap-3">
+          <button id="sidebarToggleBtn" class="lg:hidden control-btn"><i class="bi bi-list"></i></button>
+          <div class="dashboard-search hidden sm:block">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search support tickets...">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)"><span class="text-amber-500 font-extrabold">LTR</span><i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i><span class="opacity-60 text-slate-400">RTL</span></button>
+          <button class="control-btn theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
+
+          <div class="dashboard-user-dropdown ps-3 border-s border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Kavita Menon" class="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-md flex-shrink-0">
+            <div class="hidden md:block">
+              <div class="text-xs font-bold leading-none text-slate-900 dark:text-white">Kavita Menon</div>
+              <div class="text-[11px] text-indigo-500 dark:text-indigo-400 font-semibold">Platform Director</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card bg-slate-100/90 dark:bg-slate-900/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md">
+          <div>
+            <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="bi bi-chat-left-dots text-emerald-500"></i> Support Desk & Account Manager Threads
+            </h1>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Direct enterprise communications, vector proof revisions, and SLA ticket resolution.</p>
+          </div>
+          <span class="badge-emerald text-[10px] uppercase font-bold">15-MIN RESPONSE SLA</span>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white font-extrabold text-[11px] uppercase">
+              <tr>
+                <th class="p-4">Ticket ID</th>
+                <th class="p-4">Client Company</th>
+                <th class="p-4">Subject</th>
+                <th class="p-4">Assigned Manager</th>
+                <th class="p-4">Status</th>
+                <th class="p-4">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              <tr>
+                <td class="p-4 font-bold text-indigo-500">#TCK-8812</td>
+                <td class="p-4 font-extrabold text-slate-900 dark:text-white">AXION Systems</td>
+                <td class="p-4">Custom Box Sleeve Foil Proof Review</td>
+                <td class="p-4 flex items-center gap-2 font-bold">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop" class="w-7 h-7 rounded-full object-cover border border-emerald-500/40">
+                  Priya Nair
+                </td>
+                <td class="p-4"><span class="badge-emerald text-[10px]">Open • Active</span></td>
+                <td class="p-4"><button onclick="openReplyModal('#TCK-8812', 'AXION Systems', 'Custom Box Sleeve Foil Proof Review', 'Priya Nair')" class="btn-gold !py-1 !px-3 text-xs font-bold shadow-md hover:scale-105 transition-all">Reply Thread</button></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-indigo-500">#TCK-8809</td>
+                <td class="p-4 font-extrabold text-slate-900 dark:text-white">Innovate Labs</td>
+                <td class="p-4">Bulk Delivery Date Reschedule to Bangalore</td>
+                <td class="p-4 flex items-center gap-2 font-bold">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" class="w-7 h-7 rounded-full object-cover border border-indigo-500/40">
+                  Rajesh Kumar
+                </td>
+                <td class="p-4"><span class="badge-gold text-[10px]">Open • Priority</span></td>
+                <td class="p-4"><button onclick="openReplyModal('#TCK-8809', 'Innovate Labs', 'Bulk Delivery Date Reschedule to Bangalore', 'Rajesh Kumar')" class="btn-gold !py-1 !px-3 text-xs font-bold shadow-md hover:scale-105 transition-all">Reply Thread</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Reply Thread Modal -->
+  <div id="replyThreadModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-card max-w-lg w-full p-6 rounded-2xl border border-slate-700 bg-slate-900 text-white shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div>
+          <span id="replyTicketId" class="font-extrabold text-xs text-amber-500 uppercase tracking-widest me-2"></span>
+          <h3 id="replySubject" class="font-extrabold text-base text-white inline"></h3>
+        </div>
+        <button onclick="closeReplyModal()" class="text-slate-400 hover:text-white text-lg"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
+          <div class="flex justify-between text-[11px] text-slate-400">
+            <span>Client: <strong id="replyClientName" class="text-white"></strong></span>
+            <span>Manager: <strong id="replyManagerName" class="text-amber-500"></strong></span>
+          </div>
+          <p class="text-slate-300 text-xs italic bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+            "Hi team, we uploaded the updated vector EPS file for the gold foil sleeve print on PO #ORD-9921. Please verify line tolerances."
+          </p>
+        </div>
+
+        <form onsubmit="handleReplySubmit(event)" class="space-y-3">
+          <div>
+            <label class="block font-bold text-slate-400 mb-1">Manager Response Message</label>
+            <textarea id="replyMessageText" rows="4" required placeholder="Type your official response to the client..." class="w-full p-3 rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500 leading-relaxed"></textarea>
+          </div>
+
+          <div class="flex items-center justify-between pt-2">
+            <button type="button" onclick="alert('Vector file proof attached!')" class="text-slate-400 hover:text-amber-500 font-bold text-xs flex items-center gap-1.5">
+              <i class="bi bi-paperclip"></i> Attach File / Proof
+            </button>
+            <div class="flex gap-2">
+              <button type="button" onclick="closeReplyModal()" class="px-4 py-2 rounded-xl border border-slate-700 text-slate-300 font-bold hover:bg-slate-800">Cancel</button>
+              <button type="submit" class="btn-gold !py-2 !px-5 text-xs font-extrabold shadow-lg shadow-amber-500/20">Send Response</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    function openReplyModal(ticketId, client, subject, manager) {
+      document.getElementById('replyTicketId').textContent = ticketId;
+      document.getElementById('replySubject').textContent = subject;
+      document.getElementById('replyClientName').textContent = client;
+      document.getElementById('replyManagerName').textContent = manager;
+      document.getElementById('replyThreadModal').classList.remove('hidden');
+    }
+
+    function closeReplyModal() {
+      document.getElementById('replyThreadModal').classList.add('hidden');
+    }
+
+    function handleReplySubmit(e) {
+      e.preventDefault();
+      alert('Support response sent to client successfully!');
+      closeReplyModal();
+    }
+  </script>
+</body>
+</html>

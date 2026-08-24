@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Kanban | Vanguard Enterprise System</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <!-- Admin Sidebar Navigation -->
+    <aside class="dashboard-sidebar border-indigo-500/20">
+      <div>
+        <div class="sidebar-header bg-slate-950 text-white">
+          <a href="../index.html" class="brand-logo text-base">
+            <div class="logo-icon !w-8 !h-8 !text-base bg-indigo-600"><i class="bi bi-shield-lock-fill text-white"></i></div>
+            <span class="text-white">ADMIN<span class="text-indigo-400">.VANGUARD</span></span>
+          </a>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="sidebar-item"><a href="analytics.html" class="sidebar-link"><i class="bi bi-graph-up-arrow"></i> Revenue Analytics</a></li>
+          <li class="sidebar-item"><a href="users.html" class="sidebar-link"><i class="bi bi-people"></i> Client Users</a></li>
+          <li class="sidebar-item"><a href="orders.html" class="sidebar-link active"><i class="bi bi-box-seam"></i> Order Manager</a></li>
+          <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-left-dots"></i> Messages & Support</a></li>
+        </ul>
+      </div>
+
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+        <a href="../login.html" class="w-full py-2 px-3 rounded-xl border border-rose-500/30 bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white flex items-center justify-center gap-2 text-xs font-bold transition-all shadow-sm">
+          <i class="bi bi-box-arrow-right text-base font-bold"></i> Logout Dashboard
+        </a>
+      </div>
+    </aside>
+
+    <!-- Admin Main Body -->
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="flex items-center gap-3">
+          <button id="sidebarToggleBtn" class="lg:hidden control-btn"><i class="bi bi-list"></i></button>
+          <h2 class="font-extrabold text-lg text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="bi bi-kanban text-indigo-500"></i> Production & Branding Lab Kanban
+          </h2>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)"><span class="text-amber-500 font-extrabold">LTR</span><i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i><span class="opacity-60 text-slate-400">RTL</span></button>
+          <button class="control-btn theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
+
+          <div class="dashboard-user-dropdown ps-3 border-s border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Kavita Menon" class="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-md flex-shrink-0">
+            <div class="hidden md:block">
+              <div class="text-xs font-bold leading-none text-slate-900 dark:text-white">Kavita Menon</div>
+              <div class="text-[11px] text-indigo-500 dark:text-indigo-400 font-semibold">Platform Director</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 space-y-6">
+        <!-- Production Banner Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card bg-slate-100/90 dark:bg-slate-900/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge-gold text-[10px] uppercase font-bold">REAL-TIME PRODUCTION TELEMETRY</span>
+              <span class="badge-emerald text-[10px] font-bold"><i class="bi bi-shield-check me-1"></i> 99.4% ON-TIME SLA</span>
+            </div>
+            <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="bi bi-kanban text-indigo-500"></i> Production & Branding Lab Kanban
+            </h1>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Monitor live vector proof approvals, laser etching cycles, optical QC checks, and multi-city dispatch.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="alert('Showing active production pipeline orders!')" class="btn-outline text-xs !py-2 !px-3 font-bold flex items-center gap-1.5 hover:border-amber-500 hover:text-amber-500 transition-all shadow-sm">
+              <i class="bi bi-funnel"></i> Filter Stage
+            </button>
+            <a href="orders.html" class="btn-gold text-xs !py-2 !px-4 font-extrabold flex items-center gap-1.5 shadow-lg shadow-amber-500/20">
+              <i class="bi bi-box-seam"></i> View All Orders
+            </a>
+          </div>
+        </div>
+
+        <!-- Modern 4-Column Interactive Kanban Board -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Column 1: Vector Artwork Proofing -->
+          <div class="glass-card bg-slate-100/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-slate-200 dark:border-slate-800/90 shadow-md space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-xs font-bold"><i class="bi bi-vector-pen"></i></div>
+                <span class="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">Artwork Proofing (1)</span>
+              </div>
+              <span class="badge-gold text-[9px]">15-MIN SLA</span>
+            </div>
+
+            <div class="space-y-3.5" id="col-proofing">
+              <!-- Card 1 -->
+              <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-md border-l-4 border-l-amber-500 hover:shadow-lg transition-all space-y-2.5 bg-white dark:bg-slate-950/60">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-extrabold text-amber-500">#ORD-9921</span>
+                  <span class="badge-gold text-[9px]">In Review</span>
+                </div>
+                <div>
+                  <div class="font-extrabold text-xs text-slate-900 dark:text-white">AXION Systems</div>
+                  <div class="text-xs text-slate-400 font-semibold">500× Executive Leather Notebooks</div>
+                </div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+                  <i class="bi bi-brush me-1 text-amber-500"></i> Hot Foil Metallic Gold Debossing
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <div class="flex items-center gap-1.5">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop" class="w-6 h-6 rounded-full object-cover border border-amber-500/40" title="Priya Nair">
+                    <span class="text-[10px] text-slate-400 font-bold">Priya N.</span>
+                  </div>
+                  <button onclick="advanceCard(this, 'col-branding')" class="text-[10px] font-extrabold text-amber-500 hover:text-amber-400 flex items-center gap-1">
+                    Advance <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Industrial Branding Lab -->
+          <div class="glass-card bg-slate-100/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-slate-200 dark:border-slate-800/90 shadow-md space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xs font-bold"><i class="bi bi-cpu-fill"></i></div>
+                <span class="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">Branding Lab (1)</span>
+              </div>
+              <span class="badge-indigo text-[9px]">LASER / UV</span>
+            </div>
+
+            <div class="space-y-3.5" id="col-branding">
+              <!-- Card 3 -->
+              <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-md border-l-4 border-l-indigo-500 hover:shadow-lg transition-all space-y-2.5 bg-white dark:bg-slate-950/60">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-extrabold text-indigo-400">#ORD-9890</span>
+                  <span class="badge-indigo text-[9px]">75% Complete</span>
+                </div>
+                <div>
+                  <div class="font-extrabold text-xs text-slate-900 dark:text-white">TechCorp India</div>
+                  <div class="text-xs text-slate-400 font-semibold">1,200× MagSafe Wireless Chargers</div>
+                </div>
+                <!-- Animated Progress Bar -->
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[10px] text-slate-400 font-bold">
+                    <span>300DPI UV Cylindrical Print</span>
+                    <span class="text-indigo-400">75%</span>
+                  </div>
+                  <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-indigo-500 h-full rounded-full transition-all duration-500" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <div class="flex items-center gap-1.5">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop" class="w-6 h-6 rounded-full object-cover border border-indigo-500/40" title="Vikram Sharma">
+                    <span class="text-[10px] text-slate-400 font-bold">Vikram S.</span>
+                  </div>
+                  <button onclick="advanceCard(this, 'col-qc')" class="text-[10px] font-extrabold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+                    Advance <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Quality Control & Kitting -->
+          <div class="glass-card bg-slate-100/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-slate-200 dark:border-slate-800/90 shadow-md space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xs font-bold"><i class="bi bi-shield-check"></i></div>
+                <span class="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">QC & Kitting (1)</span>
+              </div>
+              <span class="badge-emerald text-[9px]">OPTICAL QC</span>
+            </div>
+
+            <div class="space-y-3.5" id="col-qc">
+              <!-- Card 4 -->
+              <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-md border-l-4 border-l-emerald-500 hover:shadow-lg transition-all space-y-2.5 bg-white dark:bg-slate-950/60">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-extrabold text-emerald-500">#ORD-9875</span>
+                  <span class="badge-emerald text-[9px]"><i class="bi bi-check2"></i> 100% Passed</span>
+                </div>
+                <div>
+                  <div class="font-extrabold text-xs text-slate-900 dark:text-white">Enterprise Solutions</div>
+                  <div class="text-xs text-slate-400 font-semibold">350× Custom Onboarding Boxes</div>
+                </div>
+                <div class="text-[10px] text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+                  <i class="bi bi-box-seam me-1 text-emerald-500"></i> Rigid Box Assembly + Cards
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <div class="flex items-center gap-1.5">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop" class="w-6 h-6 rounded-full object-cover border border-emerald-500/40" title="Ananya Roy">
+                    <span class="text-[10px] text-slate-400 font-bold">Ananya R.</span>
+                  </div>
+                  <button onclick="advanceCard(this, 'col-dispatch')" class="text-[10px] font-extrabold text-emerald-500 hover:text-emerald-400 flex items-center gap-1">
+                    Advance <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 4: Multi-City Desk Drop Dispatch -->
+          <div class="glass-card bg-slate-100/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-slate-200 dark:border-slate-800/90 shadow-md space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-xs font-bold"><i class="bi bi-truck"></i></div>
+                <span class="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">Desk Drop (1)</span>
+              </div>
+              <span class="badge-indigo text-[9px]">24H DISPATCH</span>
+            </div>
+
+            <div class="space-y-3.5" id="col-dispatch">
+              <!-- Card 5 -->
+              <div class="glass-card p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-md border-l-4 border-l-purple-500 hover:shadow-lg transition-all space-y-2.5 bg-white dark:bg-slate-950/60">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-extrabold text-purple-400">#ORD-9850</span>
+                  <span class="badge-indigo text-[9px]"><i class="bi bi-geo-alt"></i> In Transit (GPS)</span>
+                </div>
+                <div>
+                  <div class="font-extrabold text-xs text-slate-900 dark:text-white">Global Systems</div>
+                  <div class="text-xs text-slate-400 font-semibold">800× Executive VIP Hampers</div>
+                </div>
+                <div class="text-[10px] text-purple-400 font-bold bg-purple-500/10 p-2 rounded-lg border border-purple-500/20 flex items-center gap-1.5">
+                  <i class="bi bi-pin-map"></i> Chennai • Bangalore • Mumbai
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <div class="flex items-center gap-1.5">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop" class="w-6 h-6 rounded-full object-cover border border-purple-500/40" title="Priya Nair">
+                    <span class="text-[10px] text-slate-400 font-bold">Priya N.</span>
+                  </div>
+                  <span class="text-[10px] font-extrabold text-emerald-400 flex items-center gap-1"><i class="bi bi-check-circle"></i> Dispatched</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    function advanceCard(btn, nextColId) {
+      const card = btn.closest('.glass-card');
+      const targetCol = document.getElementById(nextColId);
+      if (targetCol && card) {
+        targetCol.appendChild(card);
+        alert('Order stage advanced to next column!');
+      }
+    }
+  </script>
+</body>
+</html>

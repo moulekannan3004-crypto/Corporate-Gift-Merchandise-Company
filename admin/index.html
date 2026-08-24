@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Command Center | Vanguard Enterprise System</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- Admin Sidebar Navigation -->
+    <aside class="dashboard-sidebar border-indigo-500/20">
+      <div>
+        <div class="sidebar-header bg-slate-950 text-white">
+          <a href="../index.html" class="brand-logo text-base">
+            <div class="logo-icon !w-8 !h-8 !text-base bg-indigo-600"><i class="bi bi-shield-lock-fill text-white"></i></div>
+            <span class="text-white">ADMIN<span class="text-indigo-400">.VANGUARD</span></span>
+          </a>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li class="sidebar-item"><a href="index.html" class="sidebar-link active"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="sidebar-item"><a href="analytics.html" class="sidebar-link"><i class="bi bi-graph-up-arrow"></i> Revenue Analytics</a></li>
+          <li class="sidebar-item"><a href="users.html" class="sidebar-link"><i class="bi bi-people"></i> Client Users</a></li>
+          <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><i class="bi bi-box-seam"></i> Order Manager</a></li>
+          <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-left-dots"></i> Messages & Support</a></li>
+        </ul>
+      </div>
+
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+        <a href="../login.html" class="w-full py-2.5 px-4 rounded-xl text-xs font-extrabold bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white flex items-center justify-center gap-2 transition-all border border-rose-500/20 shadow-sm">
+          <i class="bi bi-box-arrow-right text-sm"></i> Logout Dashboard
+        </a>
+      </div>
+    </aside>
+
+    <!-- Admin Main Body -->
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="flex items-center gap-3">
+          <button id="sidebarToggleBtn" class="lg:hidden control-btn"><i class="bi bi-list"></i></button>
+          <div class="dashboard-search hidden sm:block">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Global admin search...">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)"><span class="text-amber-500 font-extrabold">LTR</span><i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i><span class="opacity-60 text-slate-400">RTL</span></button>
+          <button class="control-btn theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
+
+          <div class="dashboard-user-dropdown ps-3 border-s border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Kavita Menon" class="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-md flex-shrink-0">
+            <div class="hidden md:block">
+              <div class="text-xs font-bold leading-none text-slate-900 dark:text-white">Kavita Menon</div>
+              <div class="text-[11px] text-indigo-500 dark:text-indigo-400 font-semibold">Platform Director</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 space-y-6">
+        <!-- Dashboard Page Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card bg-slate-100/90 dark:bg-slate-900/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="text-[11px] font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">System Status: 99.98% SLA Online</span>
+            </div>
+            <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white">Admin Command Center</h1>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Pan-India corporate procurement, live production telemetry, and revenue analytics.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="orders.html" class="btn-outline text-xs !py-2 !px-3 font-bold"><i class="bi bi-plus-circle me-1"></i> New Order</a>
+          </div>
+        </div>
+
+        <!-- 4 Premium Metric KPI Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- KPI 1 -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 hover:border-amber-500/50 transition-all shadow-md relative overflow-hidden group">
+            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Quarterly Revenue</span>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">₹6.7 Cr</div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg font-bold">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-100 dark:border-slate-800/60">
+              <span class="text-emerald-500 font-bold flex items-center gap-1"><i class="bi bi-arrow-up-right"></i> +28.4% YoY</span>
+              <span class="text-[10px] text-slate-400">Target: ₹7.2 Cr</span>
+            </div>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 hover:border-indigo-500/50 transition-all shadow-md relative overflow-hidden group">
+            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/20 transition-all"></div>
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Active Platform Orders</span>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">42 Orders</div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg font-bold">
+                <i class="bi bi-box-seam"></i>
+              </div>
+            </div>
+            <div class="space-y-1 pt-2 border-t border-slate-100 dark:border-slate-800/60">
+              <div class="flex justify-between text-[11px]">
+                <span class="text-indigo-400 font-bold">18 in Branding Lab</span>
+                <span class="text-slate-400 font-bold">42.8%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-500 rounded-full" style="width: 42.8%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 hover:border-purple-500/50 transition-all shadow-md relative overflow-hidden group">
+            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Pending RFQs</span>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">8 Quotes</div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg font-bold">
+                <i class="bi bi-file-earmark-text"></i>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-100 dark:border-slate-800/60">
+              <span class="text-amber-500 font-bold flex items-center gap-1"><i class="bi bi-clock-history"></i> Needs Quote</span>
+              <span class="badge-gold text-[9px]">15-MIN SLA</span>
+            </div>
+          </div>
+
+          <!-- KPI 4 -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 hover:border-emerald-500/50 transition-all shadow-md relative overflow-hidden group">
+            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Enterprise Clients</span>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">184 Clients</div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-lg font-bold">
+                <i class="bi bi-building"></i>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-100 dark:border-slate-800/60">
+              <span class="text-emerald-500 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> 100% Retained</span>
+              <div class="flex -space-x-1.5">
+                <span class="w-5 h-5 rounded-full bg-indigo-600 text-[8px] font-bold text-white flex items-center justify-center border border-slate-900">AX</span>
+                <span class="w-5 h-5 rounded-full bg-amber-500 text-[8px] font-bold text-slate-950 flex items-center justify-center border border-slate-900">IN</span>
+                <span class="w-5 h-5 rounded-full bg-purple-600 text-[8px] font-bold text-white flex items-center justify-center border border-slate-900">TC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Main Command Workspace -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Column 1: Revenue Chart & Production Telemetry (2/3 Width) -->
+          <div class="lg:col-span-2 space-y-6">
+            <!-- Revenue Growth Chart Block -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h3 class="font-extrabold text-base text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="bi bi-graph-up text-amber-500"></i> Enterprise Revenue & Fulfillment Growth
+                  </h3>
+                  <p class="text-xs text-slate-400">Quarterly billing trends across corporate tiers (2025 - 2026)</p>
+                </div>
+                <span class="badge-gold text-[10px] font-bold">AUDITED LEDGER</span>
+              </div>
+              <div class="h-64"><canvas id="adminRevenueChart"></canvas></div>
+            </div>
+
+            <!-- Live Production & Branding Lab Queue -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-extrabold text-base text-slate-900 dark:text-white flex items-center gap-2">
+                  <i class="bi bi-tools text-indigo-400"></i> Live Production & Branding Telemetry
+                </h3>
+                <a href="production.html" class="text-xs text-indigo-400 font-bold hover:underline">View All 18 Orders <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+              <div class="space-y-3">
+                <!-- Live Order 1 -->
+                <div class="p-4 rounded-xl bg-slate-100/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-extrabold text-xs flex-shrink-0">
+                      AX
+                    </div>
+                    <div>
+                      <div class="font-bold text-xs text-slate-900 dark:text-white">AXION Tech Solutions • #ORD-9921</div>
+                      <div class="text-[11px] text-slate-400">500x Executive Welcome Kits • Fiber Laser Etching</div>
+                    </div>
+                  </div>
+                  <div class="text-right sm:w-36">
+                    <div class="flex justify-between text-[10px] font-bold mb-1">
+                      <span class="text-amber-500">85% Laser Etched</span>
+                      <span class="text-slate-400">QC Next</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-amber-500 rounded-full" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live Order 2 -->
+                <div class="p-4 rounded-xl bg-slate-100/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-extrabold text-xs flex-shrink-0">
+                      IN
+                    </div>
+                    <div>
+                      <div class="font-bold text-xs text-slate-900 dark:text-white">Innovate Labs • #ORD-9918</div>
+                      <div class="text-[11px] text-slate-400">250x Eco Bamboo Tumblers • Laser Engraving</div>
+                    </div>
+                  </div>
+                  <div class="text-right sm:w-36">
+                    <div class="flex justify-between text-[10px] font-bold mb-1">
+                      <span class="text-indigo-400">60% Kitted</span>
+                      <span class="text-slate-400">Box Assembly</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-indigo-500 rounded-full" style="width: 60%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Actions & Live Activity Feed (1/3 Width) -->
+          <div class="space-y-6">
+            <!-- Quick Administrative Actions -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md">
+              <h3 class="font-extrabold text-base text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <i class="bi bi-lightning-charge text-amber-500"></i> Quick Admin Actions
+              </h3>
+              <div class="grid grid-cols-1 gap-2.5">
+                <a href="orders.html" class="p-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-amber-500/10 text-slate-800 dark:text-slate-200 hover:text-amber-500 text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                  <span class="flex items-center gap-2"><i class="bi bi-box-seam text-amber-500"></i> Dispatch Bulk Order</span>
+                  <i class="bi bi-chevron-right text-xs opacity-50"></i>
+                </a>
+                <a href="users.html" class="p-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-indigo-500/10 text-slate-800 dark:text-slate-200 hover:text-indigo-400 text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                  <span class="flex items-center gap-2"><i class="bi bi-person-plus text-indigo-400"></i> Add Client Account</span>
+                  <i class="bi bi-chevron-right text-xs opacity-50"></i>
+                </a>
+                <a href="messages.html" class="p-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-emerald-500/10 text-slate-800 dark:text-slate-200 hover:text-emerald-400 text-xs font-bold transition-all border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                  <span class="flex items-center gap-2"><i class="bi bi-chat-left-dots text-emerald-500"></i> Review Support Tickets</span>
+                  <i class="bi bi-chevron-right text-xs opacity-50"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Live Activity Log -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md">
+              <h3 class="font-extrabold text-base text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <i class="bi bi-clock-history text-indigo-400"></i> Platform Audit Feed
+              </h3>
+
+              <div class="space-y-3.5 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+                <div class="flex items-start gap-3 ps-5 relative">
+                  <span class="absolute left-1 top-1 w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-slate-900"></span>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900 dark:text-white">AXION Tech placed Order #ORD-9921</div>
+                    <div class="text-[10px] text-slate-400">500x Welcome Kits • 10 Mins Ago</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 ps-5 relative">
+                  <span class="absolute left-1 top-1 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-slate-900"></span>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900 dark:text-white">Vector proof approved by Priya Nair</div>
+                    <div class="text-[10px] text-slate-400">#ART-992 Eco Tumbler • 32 Mins Ago</div>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 ps-5 relative">
+                  <span class="absolute left-1 top-1 w-2.5 h-2.5 rounded-full bg-indigo-500 ring-4 ring-slate-900"></span>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900 dark:text-white">Courier AWB-99812 delivered</div>
+                    <div class="text-[10px] text-slate-400">250 Desk Drops @ Chennai Hub • 1 Hr Ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/charts.js"></script>
+</body>
+</html>
+

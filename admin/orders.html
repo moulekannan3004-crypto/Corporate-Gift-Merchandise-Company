@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Manager | Vanguard Enterprise Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar border-indigo-500/20">
+      <div>
+        <div class="sidebar-header bg-slate-950 text-white">
+          <a href="../index.html" class="brand-logo text-base">
+            <div class="logo-icon !w-8 !h-8 !text-base bg-indigo-600"><i class="bi bi-shield-lock-fill text-white"></i></div>
+            <span class="text-white">ADMIN<span class="text-indigo-400">.VANGUARD</span></span>
+          </a>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="sidebar-item"><a href="analytics.html" class="sidebar-link"><i class="bi bi-graph-up-arrow"></i> Revenue Analytics</a></li>
+          <li class="sidebar-item"><a href="users.html" class="sidebar-link"><i class="bi bi-people"></i> Client Users</a></li>
+          <li class="sidebar-item"><a href="orders.html" class="sidebar-link active"><i class="bi bi-box-seam"></i> Order Manager</a></li>
+          <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-left-dots"></i> Messages & Support</a></li>
+        </ul>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+        <a href="../login.html" class="w-full py-2.5 px-4 rounded-xl text-xs font-extrabold bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white flex items-center justify-center gap-2 transition-all border border-rose-500/20 shadow-sm">
+          <i class="bi bi-box-arrow-right text-sm"></i> Logout Dashboard
+        </a>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="flex items-center gap-3">
+          <button id="sidebarToggleBtn" class="lg:hidden control-btn"><i class="bi bi-list"></i></button>
+          <div class="dashboard-search hidden sm:block">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search orders by PO or client...">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)"><span class="text-amber-500 font-extrabold">LTR</span><i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i><span class="opacity-60 text-slate-400">RTL</span></button>
+          <button class="control-btn theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
+
+          <div class="dashboard-user-dropdown ps-3 border-s border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Kavita Menon" class="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-md flex-shrink-0">
+            <div class="hidden md:block">
+              <div class="text-xs font-bold leading-none text-slate-900 dark:text-white">Kavita Menon</div>
+              <div class="text-[11px] text-indigo-500 dark:text-indigo-400 font-semibold">Platform Director</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card bg-slate-100/90 dark:bg-slate-900/90 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md">
+          <div>
+            <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="bi bi-box-seam text-amber-500"></i> Platform Bulk Order Manager
+            </h1>
+            <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Track live production status, vector proof approvals, and multi-city desk drops.</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-md overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white font-extrabold text-[11px] uppercase">
+              <tr>
+                <th class="p-4">Order PO #</th>
+                <th class="p-4">Client Company</th>
+                <th class="p-4">Items / Quantity</th>
+                <th class="p-4">Branding Technique</th>
+                <th class="p-4">Production Status</th>
+                <th class="p-4">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              <tr>
+                <td class="p-4 font-bold text-amber-500">#ORD-9921</td>
+                <td class="p-4 font-extrabold text-slate-900 dark:text-white">AXION Systems</td>
+                <td class="p-4">500x Welcome Kits</td>
+                <td class="p-4"><span class="badge-gold text-[10px]">Fiber Laser Etching</span></td>
+                <td class="p-4"><span class="badge-indigo text-[10px]">85% Branding Lab</span></td>
+                <td class="p-4"><button onclick="openTelemetryModal('#ORD-9921', 'AXION Systems', '500x Welcome Kits', 'Fiber Laser Etching', '85% Branding Lab', 'Chennai • Bangalore Desk Drop')" class="btn-outline !py-1 !px-3 text-xs font-bold hover:border-amber-500 hover:text-amber-500 transition-all">Track Telemetry</button></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-amber-500">#ORD-9918</td>
+                <td class="p-4 font-extrabold text-slate-900 dark:text-white">Innovate Labs</td>
+                <td class="p-4">250x Eco Bamboo Tumblers</td>
+                <td class="p-4"><span class="badge-emerald text-[10px]">Laser Engraving</span></td>
+                <td class="p-4"><span class="badge-gold text-[10px]">60% Kitting & Assembly</span></td>
+                <td class="p-4"><button onclick="openTelemetryModal('#ORD-9918', 'Innovate Labs', '250x Eco Bamboo Tumblers', 'Laser Engraving', '60% Kitting & Assembly', 'Mumbai Central Hub')" class="btn-outline !py-1 !px-3 text-xs font-bold hover:border-indigo-400 hover:text-indigo-400 transition-all">Track Telemetry</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Live Telemetry Tracking Modal -->
+  <div id="telemetryModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-card max-w-lg w-full p-6 rounded-2xl border border-slate-700 bg-slate-900 text-white shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div>
+          <span id="telemetryPo" class="font-extrabold text-xs text-amber-500 uppercase tracking-widest me-2"></span>
+          <h3 id="telemetryClient" class="font-extrabold text-base text-white inline"></h3>
+        </div>
+        <button onclick="closeTelemetryModal()" class="text-slate-400 hover:text-white text-lg"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Items / Quantity:</span>
+            <span id="telemetryItems" class="font-bold text-white"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Branding Technique:</span>
+            <span id="telemetryTechnique" class="badge-gold text-[10px]"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Current Live Stage:</span>
+            <span id="telemetryStatus" class="font-bold text-emerald-400"></span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-slate-400 font-bold">Destination Hub:</span>
+            <span id="telemetryHub" class="text-slate-300"></span>
+          </div>
+        </div>
+
+        <!-- Live Telemetry Stepper -->
+        <div class="space-y-3 pt-2">
+          <h4 class="font-extrabold text-xs text-slate-300 uppercase tracking-wider">Live Production & Logistics Stepper</h4>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold">
+              <i class="bi bi-check-circle-fill text-sm"></i>
+              <div>1. Vector Artwork Proofing — Approved (300DPI Optical QC Passed)</div>
+            </div>
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 font-bold">
+              <i class="bi bi-gear-fill animate-spin text-sm"></i>
+              <div>2. Fiber Laser Branding Lab — Active (85% In Progress)</div>
+            </div>
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-500 font-bold">
+              <i class="bi bi-circle text-sm"></i>
+              <div>3. Custom Kitting & Rigid Box Assembly — Pending</div>
+            </div>
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-500 font-bold">
+              <i class="bi bi-truck text-sm"></i>
+              <div>4. Multi-City Desk Drop Dispatch — Scheduled Feb 26, 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <a href="production.html" class="px-4 py-2 rounded-xl border border-indigo-500/40 text-indigo-300 font-bold hover:bg-indigo-600/20">Open Kanban Board</a>
+          <button onclick="closeTelemetryModal()" class="btn-gold !py-2 !px-5 text-xs font-extrabold shadow-lg shadow-amber-500/20">Close Telemetry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    function openTelemetryModal(po, client, items, technique, status, hub) {
+      document.getElementById('telemetryPo').textContent = po;
+      document.getElementById('telemetryClient').textContent = client;
+      document.getElementById('telemetryItems').textContent = items;
+      document.getElementById('telemetryTechnique').textContent = technique;
+      document.getElementById('telemetryStatus').textContent = status;
+      document.getElementById('telemetryHub').textContent = hub;
+      document.getElementById('telemetryModal').classList.remove('hidden');
+    }
+
+    function closeTelemetryModal() {
+      document.getElementById('telemetryModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

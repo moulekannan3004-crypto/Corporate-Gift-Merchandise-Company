@@ -1,0 +1,123 @@
+/* ==========================================================================
+   RTL (RIGHT-TO-LEFT) OVERRIDES & MIRRORING STYLES
+   Comprehensive support for Arabic, Hebrew, and RTL languages
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Brand Logo RTL Mirroring */
+[dir="rtl"] .brand-logo {
+  flex-direction: row-reverse !important;
+  margin-right: 0 !important;
+  margin-left: 1.5rem !important;
+}
+
+[dir="rtl"] .brand-logo .logo-icon {
+  margin-left: 0.75rem !important;
+  margin-right: 0 !important;
+}
+
+/* Navbar & Dropdown RTL Alignment */
+[dir="rtl"] .navbar-content {
+  flex-direction: row;
+}
+
+[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-actions {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .dropdown-menu-custom {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+/* Mobile Nav Drawer RTL */
+[dir="rtl"] .mobile-nav-drawer {
+  text-align: right;
+}
+
+/* Margin & Padding Reversals */
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+
+[dir="rtl"] .pe-1 { padding-left: 0.25rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-2 { padding-left: 0.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+[dir="rtl"] .ps-1 { padding-right: 0.25rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-2 { padding-right: 0.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+
+/* Text Alignment Reversals */
+[dir="rtl"] .text-left { text-align: right !important; }
+[dir="rtl"] .text-right { text-align: left !important; }
+
+/* Icon Flipping */
+[dir="rtl"] .bi-chevron-right::before { content: "\f284"; } /* bi-chevron-left */
+[dir="rtl"] .bi-chevron-left::before { content: "\f285"; } /* bi-chevron-right */
+[dir="rtl"] .bi-arrow-right::before { content: "\f12c"; } /* bi-arrow-left */
+[dir="rtl"] .bi-arrow-left::before { content: "\f138"; } /* bi-arrow-right */
+
+/* Floating Hero Badges RTL */
+[dir="rtl"] .hero-floating-badge.badge-top {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .hero-floating-badge.badge-bottom {
+  left: auto;
+  right: 1.5rem;
+}
+
+/* Location Route Cards */
+[dir="rtl"] .location-route-item {
+  border-left: none;
+  border-right: 4px solid var(--accent-gold);
+}
+
+[dir="rtl"] .location-route-item:hover {
+  transform: translateX(-4px);
+}
+
+/* Toast Notifications RTL */
+[dir="rtl"] .toast-container {
+  right: auto;
+  left: 2rem;
+}
+
+[dir="rtl"] .toast-msg {
+  border-left: 1px solid var(--border-color);
+  border-right: 4px solid var(--accent-emerald);
+  animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Data Tables & Flex Helper Overrides */
+[dir="rtl"] .custom-table th,
+[dir="rtl"] .custom-table td {
+  text-align: right;
+}

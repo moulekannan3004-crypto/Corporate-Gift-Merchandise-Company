@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details | Employee Onboarding Kits</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <header class="navbar-main">
+    <div class="container-custom navbar-content">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/favicon.svg" alt="Vanguard Gift" class="logo-img">
+        <span>VANGUARD<span class="text-amber-500">.GIFT</span></span>
+      </a>
+      <nav class="hidden lg:flex">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home 01</a></li>
+          <li><a href="home-digital-agency.html" class="nav-link">Home 02</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="admin/index.html" class="nav-link text-indigo-600 font-semibold"><i class="bi bi-shield-lock me-1"></i>Admin</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)"><span class="text-amber-500 font-extrabold">LTR</span><i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i><span class="opacity-60 text-slate-400">RTL</span></button>
+        <button class="control-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <a href="contact.html" class="btn-gold hidden sm:inline-flex"><i class="bi bi-send me-1"></i> Get Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Main Service Content -->
+        <div class="lg:col-span-8">
+          <span class="badge-gold mb-3">Service Deep Dive</span>
+          <h1 class="text-3xl font-bold mb-4">Employee Onboarding Kit Fulfillment</h1>
+          <img src="assets/images/executive_kit.jpg" alt="Service Detail" class="w-full h-80 object-cover rounded-2xl mb-6">
+
+          <h3 class="text-xl font-bold mb-2">Service Process Overview</h3>
+          <p class="text-slate-500 mb-4">We streamline your HR onboarding workflow by curating premium gifts, applying exact vector logo branding, packaging in custom magnetic closure boxes, and shipping directly to new hires prior to day one.</p>
+
+          <div class="glass-card p-6 rounded-xl mb-6">
+            <h4 class="font-bold text-base mb-3">Service SLAs & Guarantees</h4>
+            <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-500 me-1"></i> 10-Day Standard Production SLA</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-500 me-1"></i> Quality Inspection Checkpoints on 100% of Units</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-500 me-1"></i> Real-time tracking link emailed to HR manager</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sticky Sidebar CTA -->
+        <div class="lg:col-span-4">
+          <div class="glass-panel p-6 sticky top-28">
+            <h3 class="font-bold text-lg mb-2">Request Custom Quote</h3>
+            <p class="text-xs text-slate-500 mb-4">Connect with a corporate procurement manager for volume pricing.</p>
+            
+            <form onsubmit="event.preventDefault(); showToast('Quotation request submitted!', 'Sales Inquiry');" class="space-y-3">
+              <input type="text" placeholder="Company Name" required class="w-full p-2.5 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent">
+              <input type="email" placeholder="Work Email" required class="w-full p-2.5 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent">
+              <input type="number" placeholder="Estimated Units (e.g. 500)" required class="w-full p-2.5 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent">
+              <button type="submit" class="btn-gold w-full text-xs">Submit RFQ Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="footer-main bg-slate-950 text-white pt-16 pb-8 border-t border-slate-800">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-1">
+          <a href="index.html" class="brand-logo text-white mb-4 block">
+            <img src="assets/images/favicon.svg" alt="Vanguard Gift" class="logo-img">
+            <span class="text-white">VANGUARD<span class="text-amber-500">.GIFT</span></span>
+          </a>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Enterprise corporate gifting & merchandise fulfillment platform across India.
+          </p>
+          <div class="footer-social-flex">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn social-instagram" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn social-facebook" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn social-linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn social-twitter" title="Twitter / X" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-amber-500 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-500 transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-amber-500 transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-amber-500 transition-colors">Pricing Tiers</a></li>
+            <li><a href="blog.html" class="hover:text-amber-500 transition-colors">Blog & Journal</a></li>
+            <li><a href="contact.html" class="hover:text-amber-500 transition-colors">Contact Sales</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Enterprise SLA</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><span class="text-amber-500 font-semibold">24h Express</span> Dispatch SLA</li>
+            <li><span class="text-emerald-500 font-semibold">100% Optical</span> QC Inspection</li>
+            <li><span class="text-indigo-500 font-semibold">Pantone PMS</span> Color Matching</li>
+            <li><span class="text-amber-500 font-semibold">5 Regional</span> Logistics Hubs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Corporate Sales</h4>
+          <p class="text-xs text-slate-400 mb-2"><i class="bi bi-envelope me-1.5 text-amber-500"></i> corporate@vanguardgift.com</p>
+          <p class="text-xs text-slate-400 mb-4"><i class="bi bi-telephone me-1.5 text-amber-500"></i> +91 98765 43210</p>
+          <a href="contact.html" class="btn-gold text-xs w-full block text-center py-2.5">Connect Sales Team</a>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Vanguard Gift & Merchandise Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
+

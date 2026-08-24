@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFQ Quote Queue | Enterprise Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar border-indigo-500/20">
+      <div>
+        <div class="sidebar-header bg-slate-950 text-white">
+          <a href="../index.html" class="brand-logo text-base">
+            <div class="logo-icon !w-8 !h-8 !text-base bg-indigo-600"><i class="bi bi-shield-lock-fill text-white"></i></div>
+            <span class="text-white">ADMIN<span class="text-indigo-400">.VANGUARD</span></span>
+          </a>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="sidebar-item"><a href="users.html" class="sidebar-link"><i class="bi bi-people"></i> Client Companies</a></li>
+          <li class="sidebar-item"><a href="orders.html" class="sidebar-link"><i class="bi bi-box-seam"></i> Order Manager</a></li>
+          <li class="sidebar-item"><a href="quotations.html" class="sidebar-link active"><i class="bi bi-file-earmark-text"></i> RFQ Queue</a></li>
+          <li class="sidebar-item"><a href="production.html" class="sidebar-link"><i class="bi bi-kanban"></i> Production Kanban</a></li>
+          <li class="sidebar-item"><a href="products.html" class="sidebar-link"><i class="bi bi-grid"></i> Catalog & Inventory</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <h2 class="font-extrabold text-lg flex items-center gap-2"><i class="bi bi-file-earmark-text text-amber-500"></i> Request for Quote (RFQ) Queue</h2>
+      </header>
+
+      <div class="p-6">
+        <div class="glass-card p-5 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white font-extrabold text-[11px] uppercase">
+              <tr>
+                <th class="p-4">RFQ Ref ID</th>
+                <th class="p-4">Company</th>
+                <th class="p-4">Requested Volume</th>
+                <th class="p-4">Target Date</th>
+                <th class="p-4">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              <tr>
+                <td class="p-4 font-bold text-amber-500">#RFQ-2026-091</td>
+                <td class="p-4 font-extrabold">AXION Tech Solutions</td>
+                <td class="p-4">2,500 Welcome Boxes</td>
+                <td class="p-4">March 15, 2026</td>
+                <td class="p-4"><a href="../contact.html" class="btn-gold !py-1 !px-3 text-xs">Generate Proposal</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Retainers | Enterprise Corporate Gifting Plans</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar-main">
+    <div class="container-custom navbar-content">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/favicon.svg" alt="Vanguard Gift" class="logo-img">
+        <span>VANGUARD<span class="text-amber-500">.GIFT</span></span>
+      </a>
+      <nav class="hidden lg:flex">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link">Home <i class="bi bi-chevron-down ms-1 text-xs"></i></a>
+            <div class="dropdown-menu-custom">
+              <a href="index.html" class="dropdown-item-custom">
+                <i class="bi bi-house-door text-amber-500"></i>
+                <div>
+                  <div class="font-bold">Home 01</div>
+                  <div class="text-[11px] text-slate-400 font-normal">General Services</div>
+                </div>
+              </a>
+              <a href="home-digital-agency.html" class="dropdown-item-custom">
+                <i class="bi bi-brush text-indigo-500"></i>
+                <div>
+                  <div class="font-bold">Home 02</div>
+                  <div class="text-[11px] text-slate-400 font-normal">Agency & SaaS</div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)">
+          <span class="text-amber-500 font-extrabold">LTR</span>
+          <i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i>
+          <span class="opacity-60 text-slate-400">RTL</span>
+        </button>
+        <button class="control-btn theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <a href="login.html" class="btn-outline text-xs !py-2 !px-3.5 font-bold flex items-center gap-1.5" title="Client Portal Login">
+          <i class="bi bi-box-arrow-in-right text-amber-500 font-bold"></i> Login
+        </a>
+        <a href="contact.html" class="btn-gold hidden sm:inline-flex"><i class="bi bi-send me-1"></i> Get Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header Banner -->
+  <section class="section-padding hero-header-bg text-white text-center relative">
+    <div class="container-custom max-w-3xl mx-auto">
+      <span class="badge-gold mb-3 inline-block"><i class="bi bi-tags-fill me-1"></i> Transparent Enterprise Plans</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-3 text-white drop-shadow-md">Corporate Retainer Pricing</h1>
+      <p class="text-slate-200 text-sm sm:text-base max-w-xl mx-auto leading-relaxed drop-shadow">Choose a transparent plan that fits your company scale, from growing tech startups to global enterprise teams.</p>
+    </div>
+  </section>
+
+  <!-- Pricing Retainer Cards Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <!-- Billing Toggle Switch -->
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Billed Monthly</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="pricing-toggle" class="sr-only peer" onchange="togglePricingPeriod(this.checked)">
+          <div class="w-12 h-6 bg-slate-200 dark:bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-amber-500 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-slate-900 border border-slate-300 dark:border-slate-700"></div>
+        </label>
+        <span class="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+          Billed Annually <span class="badge-gold text-[9px] font-extrabold uppercase">SAVE 20%</span>
+        </span>
+      </div>
+
+      <!-- Retainer Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Starter Plan -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border border-slate-200 dark:border-slate-800 hover:border-amber-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-extrabold text-xl text-slate-900 dark:text-white">Starter</span>
+              <span class="badge-gold text-[9px] font-bold">STARTUP SUITE</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Designed for small teams, quarterly onboarding, and seasonal gifts.</p>
+            
+            <div class="mb-6">
+              <div class="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight" id="price-starter">₹25,000<span class="text-xs font-medium text-slate-400">/month</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">Billed quarterly • GST invoice included</div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-amber-500"></i> Up to 250 Units / Quarter</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-amber-500"></i> Fiber Laser Logo Engraving</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-amber-500"></i> 2 Delivery Locations</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-amber-500"></i> Standard Box Packaging</div>
+              <div class="flex items-center gap-2 text-slate-400 opacity-60"><i class="bi bi-x-circle me-1"></i> Dedicated Account Manager</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-outline w-full text-center text-xs font-bold py-3">Choose Starter Plan</a>
+        </div>
+
+        <!-- Business Plan (Featured) -->
+        <div class="glass-card builder-category-card p-8 rounded-2xl border-2 border-amber-500 shadow-2xl flex flex-col justify-between relative bg-amber-500/5">
+          <div>
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <span class="font-extrabold text-xl text-slate-900 dark:text-white">Business</span>
+              <div class="flex items-center gap-2">
+                <span class="badge-gold text-[10px] font-extrabold px-3 py-1 uppercase shadow-sm border border-amber-500/30"><i class="bi bi-star-fill me-1"></i> MOST POPULAR</span>
+                <span class="badge-indigo text-[9px] font-bold">HYPER-GROWTH</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">For fast-growing tech teams needing multi-city desk drop delivery.</p>
+            
+            <div class="mb-6">
+              <div class="text-4xl font-extrabold text-amber-500 tracking-tight" id="price-business">₹75,000<span class="text-xs font-medium text-slate-400">/month</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">Billed quarterly • Priority SLA Dispatch</div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-700 dark:text-slate-200 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+              <div class="flex items-center gap-2 font-semibold"><i class="bi bi-check-circle-fill text-amber-500"></i> Up to 1,000 Units / Quarter</div>
+              <div class="flex items-center gap-2 font-semibold"><i class="bi bi-check-circle-fill text-amber-500"></i> 300DPI UV & Foil Stamping</div>
+              <div class="flex items-center gap-2 font-semibold"><i class="bi bi-check-circle-fill text-amber-500"></i> 5-City Multi-Destination Delivery</div>
+              <div class="flex items-center gap-2 font-semibold"><i class="bi bi-check-circle-fill text-amber-500"></i> Custom Box Sleeve & Packaging</div>
+              <div class="flex items-center gap-2 font-semibold"><i class="bi bi-check-circle-fill text-amber-500"></i> Dedicated Account Manager</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-gold w-full text-center text-xs font-extrabold py-3 shadow-lg">Choose Business Plan</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-extrabold text-xl text-slate-900 dark:text-white">Enterprise</span>
+              <span class="badge-indigo text-[9px] font-bold">CUSTOM SLA</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">For large corporations needing API integration & custom inventory holding.</p>
+            
+            <div class="mb-6">
+              <div class="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Custom</div>
+              <div class="text-[11px] text-slate-400 mt-1">Tailored contract • Penalty SLA Clause</div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-300 mb-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-indigo-500"></i> Unlimited Units & Custom Orders</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-indigo-500"></i> Dedicated Warehousing Inventory Holding</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-indigo-500"></i> Workday, BambooHR & HRMS API Sync</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-indigo-500"></i> Vector Artwork Vault & NDA Vault</div>
+              <div class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-indigo-500"></i> Dedicated Executive Manager</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-outline w-full text-center text-xs font-bold py-3">Contact Sales Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volume Bulk Tier Discount Grid -->
+  <section class="section-padding bg-slate-950 text-white relative overflow-hidden">
+    <!-- Ambient Radial Background Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container-custom relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="badge-gold mb-2 inline-block"><i class="bi bi-percent me-1"></i> BULK PROCUREMENT SAVINGS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Volume Order Price Tiers</h2>
+        <p class="text-slate-300 text-xs sm:text-sm">Transparent discounts automatically applied to order quantities across all merchandise categories.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Tier 1 -->
+        <div class="bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-slate-800 relative hover:border-amber-500 transition-all flex flex-col justify-between shadow-xl group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center text-sm font-extrabold border border-amber-500/20">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">TIER 1</span>
+              </div>
+              <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">STANDARD</span>
+            </div>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-4 h-24 border border-slate-800">
+              <img src="assets/images/tech_accessories.jpg" alt="Tier 1 Bulk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2 left-3 text-xs font-extrabold text-white">100 – 500 Units</span>
+            </div>
+
+            <div class="text-xs font-extrabold text-amber-400 mb-2">Base Retainer Rate</div>
+            <p class="text-[11px] text-slate-300 leading-relaxed font-normal mb-4">
+              Standard logo branding, 15-min vector proofing, and 2-day SLA dispatch.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-amber-400 font-bold">
+            <span><i class="bi bi-check-circle-fill me-1"></i> Standard Proof SLA</span>
+            <span>0% OFF</span>
+          </div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border-2 border-emerald-500/50 relative hover:border-emerald-500 transition-all flex flex-col justify-between shadow-2xl group bg-emerald-500/5">
+          <span class="badge-emerald absolute -top-3 right-4 text-[9px] font-extrabold uppercase shadow-md px-2.5 py-0.5"><i class="bi bi-graph-up-arrow me-1"></i> POPULAR VOLUME</span>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-sm font-extrabold border border-emerald-500/20">
+                  <i class="bi bi-percent"></i>
+                </div>
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">TIER 2</span>
+              </div>
+              <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">12% SAVINGS</span>
+            </div>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-4 h-24 border border-slate-800">
+              <img src="assets/images/corporate_apparel.jpg" alt="Tier 2 Bulk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2 left-3 text-xs font-extrabold text-emerald-400">501 – 2,500 Units</span>
+            </div>
+
+            <div class="text-xs font-extrabold text-emerald-400 mb-2">12% Volume Discount</div>
+            <p class="text-[11px] text-slate-300 leading-relaxed font-normal mb-4">
+              Free laser sample proof + 5-city destination desk drop fulfillment.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-emerald-400 font-bold">
+            <span><i class="bi bi-check-circle-fill me-1"></i> Free Laser Proof</span>
+            <span>SAVE 12%</span>
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-slate-800 relative hover:border-indigo-500 transition-all flex flex-col justify-between shadow-xl group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/15 text-indigo-400 flex items-center justify-center text-sm font-extrabold border border-indigo-500/20">
+                  <i class="bi bi-diagram-3-fill"></i>
+                </div>
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">TIER 3</span>
+              </div>
+              <span class="bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">22% SAVINGS</span>
+            </div>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-4 h-24 border border-slate-800">
+              <img src="assets/images/eco_hampers.jpg" alt="Tier 3 Bulk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2 left-3 text-xs font-extrabold text-indigo-400">2,501 – 10,000 Units</span>
+            </div>
+
+            <div class="text-xs font-extrabold text-indigo-400 mb-2">22% Volume Discount</div>
+            <p class="text-[11px] text-slate-300 leading-relaxed font-normal mb-4">
+              Dedicated warehouse storage + custom box sleeve die-cutting included.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-indigo-400 font-bold">
+            <span><i class="bi bi-check-circle-fill me-1"></i> Custom Die Sleeve</span>
+            <span>SAVE 22%</span>
+          </div>
+        </div>
+
+        <!-- Tier 4 -->
+        <div class="bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-slate-800 relative hover:border-purple-500 transition-all flex flex-col justify-between shadow-xl group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/15 text-purple-400 flex items-center justify-center text-sm font-extrabold border border-purple-500/20">
+                  <i class="bi bi-building-gear"></i>
+                </div>
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">TIER 4</span>
+              </div>
+              <span class="bg-purple-500/20 text-purple-300 border border-purple-500/40 text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">CUSTOM SLA</span>
+            </div>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-4 h-24 border border-slate-800">
+              <img src="assets/images/executive_kit.jpg" alt="Tier 4 Bulk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2 left-3 text-xs font-extrabold text-purple-400">10,000+ Units</span>
+            </div>
+
+            <div class="text-xs font-extrabold text-purple-400 mb-2">Custom Enterprise Contract</div>
+            <p class="text-[11px] text-slate-300 leading-relaxed font-normal mb-4">
+              HRMS API integration, NDA compliance vault, and 24h express SLA.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-purple-400 font-bold">
+            <span><i class="bi bi-shield-check me-1"></i> HRMS API Integration</span>
+            <span>VIP RATE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Enterprise Feature Comparison Matrix -->
+  <section class="section-padding">
+    <div class="container-custom max-w-5xl">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="badge-indigo mb-2 inline-block">DETAILED COMPARISON</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">Comprehensive Feature Matrix</h2>
+        <p class="text-slate-500 text-xs sm:text-sm">Compare technical capabilities, SLA guarantees, and support options across plans.</p>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white uppercase font-extrabold text-[11px]">
+            <tr>
+              <th class="p-4 sm:p-5">Platform Feature</th>
+              <th class="p-4 sm:p-5 text-slate-600 dark:text-slate-300">Starter</th>
+              <th class="p-4 sm:p-5 text-amber-500 bg-amber-500/10">Business</th>
+              <th class="p-4 sm:p-5 text-indigo-500">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Quarterly Unit Allocation</td>
+              <td class="p-4 sm:p-5">250 Units</td>
+              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">1,000 Units</td>
+              <td class="p-4 sm:p-5 font-bold text-indigo-500">Unlimited</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Branding Lab Technologies</td>
+              <td class="p-4 sm:p-5">Laser Engraving</td>
+              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">Laser + 300DPI UV + Hot Foil</td>
+              <td class="p-4 sm:p-5 font-bold text-indigo-500">All Techniques + Custom Dies</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">3D Vector Proof SLA</td>
+              <td class="p-4 sm:p-5">2 Hours</td>
+              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">15 Minutes</td>
+              <td class="p-4 sm:p-5 font-bold text-indigo-500">Instant Automated Proofing</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Free Warehouse Inventory Holding</td>
+              <td class="p-4 sm:p-5">30 Days</td>
+              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">90 Days</td>
+              <td class="p-4 sm:p-5 font-bold text-indigo-500">Unlimited 365 Days</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">HRMS API Integration (Workday/BambooHR)</td>
+              <td class="p-4 sm:p-5 text-slate-400">—</td>
+              <td class="p-4 sm:p-5 text-slate-400">—</td>
+              <td class="p-4 sm:p-5 font-bold text-emerald-500"><i class="bi bi-check-circle-fill me-1"></i> Full Webhook & REST API</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Dedicated Account Manager</td>
+              <td class="p-4 sm:p-5 text-slate-400">—</td>
+              <td class="p-4 sm:p-5 font-bold text-emerald-500 bg-amber-500/5"><i class="bi bi-check-circle-fill me-1"></i> Senior Account Lead</td>
+              <td class="p-4 sm:p-5 font-bold text-emerald-500"><i class="bi bi-check-circle-fill me-1"></i> 24/7 Dedicated Exec Team</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Pricing FAQ Accordion Section -->
+  <section class="section-padding bg-slate-50 dark:bg-slate-900/50 border-t border-b border-slate-200 dark:border-slate-800">
+    <div class="container-custom">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="badge-gold mb-2 inline-block"><i class="bi bi-question-circle-fill me-1"></i> FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">Enterprise Pricing FAQ</h2>
+        <p class="text-slate-500 text-xs sm:text-sm">Everything you need to know about retainers, invoicing, rollover terms, and SLA guarantees.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- FAQ Accordion List (8 Columns) -->
+        <div class="lg:col-span-8 space-y-4">
+          <!-- FAQ 1 -->
+          <details class="glass-card builder-category-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group transition-all" open>
+            <summary class="font-extrabold text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-bold text-sm flex-shrink-0 border border-amber-500/20">
+                  <i class="bi bi-file-earmark-text"></i>
+                </div>
+                <div>
+                  <span class="badge-gold text-[9px] font-bold me-2">CONTRACT TERMS</span>
+                  <span class="text-slate-900 dark:text-white font-extrabold">What is the minimum contract commitment period?</span>
+                </div>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-amber-500 flex items-center justify-center text-xs flex-shrink-0 transition-transform group-open:rotate-180">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 leading-relaxed ps-12">
+              Starter and Business retainer plans are billed quarterly on a flexible 3-month rolling agreement. Enterprise custom contracts offer tailored 6-month or 12-month terms with annual prepayment discounts up to 20%.
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="glass-card builder-category-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group transition-all">
+            <summary class="font-extrabold text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-500 flex items-center justify-center font-bold text-sm flex-shrink-0 border border-emerald-500/20">
+                  <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <div>
+                  <span class="badge-emerald text-[9px] font-bold me-2">ROLLOVER GUARANTEE</span>
+                  <span class="text-slate-900 dark:text-white font-extrabold">Can unused quarterly unit allocations roll over?</span>
+                </div>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-emerald-500 flex items-center justify-center text-xs flex-shrink-0 transition-transform group-open:rotate-180">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 leading-relaxed ps-12">
+              Yes! Unused unit allocations on Business and Enterprise plans automatically roll over to the following quarter for up to 180 days, ensuring complete flexibility and zero waste of your corporate budget.
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="glass-card builder-category-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group transition-all">
+            <summary class="font-extrabold text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-indigo-500/15 text-indigo-500 flex items-center justify-center font-bold text-sm flex-shrink-0 border border-indigo-500/20">
+                  <i class="bi bi-receipt-cutoff"></i>
+                </div>
+                <div>
+                  <span class="badge-indigo text-[9px] font-bold me-2">GST TAX CREDIT</span>
+                  <span class="text-slate-900 dark:text-white font-extrabold">How does GST invoicing and tax credit work?</span>
+                </div>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-indigo-500 flex items-center justify-center text-xs flex-shrink-0 transition-transform group-open:rotate-180">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 leading-relaxed ps-12">
+              All Vanguard invoices include 18% GST with your company’s registered GSTIN clearly printed. Automated Input Tax Credit (ITC) compliant tax invoices are generated instantly in your client portal upon dispatch.
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="glass-card builder-category-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group transition-all">
+            <summary class="font-extrabold text-base text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-purple-500/15 text-purple-500 flex items-center justify-center font-bold text-sm flex-shrink-0 border border-purple-500/20">
+                  <i class="bi bi-truck"></i>
+                </div>
+                <div>
+                  <span class="badge-indigo text-[9px] font-bold me-2">DESK DROP SLA</span>
+                  <span class="text-slate-900 dark:text-white font-extrabold">How are multi-city desk drop shipments tracked?</span>
+                </div>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-purple-500 flex items-center justify-center text-xs flex-shrink-0 transition-transform group-open:rotate-180">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 leading-relaxed ps-12">
+              Every shipment is tracked via real-time GPS telemetry from our 5 regional hubs across India. HR leads receive automated delivery notifications and digital recipient proof-of-delivery receipts.
+            </div>
+          </details>
+        </div>
+
+        <!-- Financial Support Callout Card (4 Columns) -->
+        <div class="lg:col-span-4 bg-slate-900 text-white p-7 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl font-bold mb-4">
+              <i class="bi bi-headset"></i>
+            </div>
+            <h4 class="font-extrabold text-xl text-white mb-2">Have Billing Questions?</h4>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Need custom PO payment terms, MSA agreements, or multi-subsidiary billing structure? Speak directly with our Finance Lead.
+            </p>
+
+            <div class="flex items-center gap-3 mb-6 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop" alt="Vikram Sharma" class="w-10 h-10 rounded-full object-cover border-2 border-amber-500 flex-shrink-0 shadow-md">
+              <div>
+                <div class="font-extrabold text-xs text-white">Vikram Sharma</div>
+                <div class="text-[10px] text-amber-400 font-medium">Head of Enterprise Sales</div>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-4 border-t border-slate-800 text-xs mb-6">
+              <div class="flex items-center gap-2 text-slate-300">
+                <i class="bi bi-envelope text-amber-400"></i> corporate@vanguardgift.com
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <i class="bi bi-telephone text-amber-400"></i> +91 98765 43210
+              </div>
+            </div>
+
+            <a href="contact.html" class="btn-gold w-full text-center text-xs font-extrabold py-3 block shadow-md">
+              Connect Financial Lead <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- High-Impact Enterprise CTA Section -->
+  <section class="section-padding bg-slate-950 text-white relative overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container-custom relative z-10">
+      <div class="bg-gradient-to-r from-slate-900 via-slate-900/90 to-indigo-950/80 p-8 sm:p-14 rounded-3xl border border-slate-800 shadow-2xl text-center max-w-4xl mx-auto">
+        <span class="badge-gold mb-4 inline-block text-xs uppercase font-extrabold px-3.5 py-1 rounded-full"><i class="bi bi-rocket-takeoff-fill me-1.5"></i> START PROCUREMENT TODAY</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+          Ready to Elevate Your <br><span class="gradient-text">Corporate Gifting Program?</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed font-normal">
+          Connect with an enterprise procurement specialist or build your custom order quote instantly with real-time 3D vector proofing.
+        </p>
+
+        <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+          <a href="index.html#builder-card" class="btn-gold text-sm px-8 py-3.5 font-extrabold inline-flex items-center gap-2 shadow-lg">
+            <i class="bi bi-sliders text-base"></i> Launch Order Configurator
+          </a>
+          <a href="contact.html" class="inline-flex items-center gap-2 text-sm px-8 py-3.5 font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-amber-500 rounded-xl transition-all shadow-md">
+            <i class="bi bi-telephone-outbound-fill text-amber-400"></i> Contact Sales Team <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+
+        <div class="pt-6 border-t border-slate-800/80 flex flex-wrap justify-center gap-6 text-xs text-slate-400 font-medium">
+          <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-amber-400"></i> 24h Express SLA</span>
+          <span class="flex items-center gap-1.5"><i class="bi bi-vector-pen text-indigo-400"></i> 15-Min 3D Vector Proof</span>
+          <span class="flex items-center gap-1.5"><i class="bi bi-truck text-emerald-400"></i> Pan-India Multi-City Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="footer-main bg-slate-950 text-white pt-16 pb-8 border-t border-slate-800">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-1">
+          <a href="index.html" class="brand-logo text-white mb-4 block">
+            <img src="assets/images/favicon.svg" alt="Vanguard Gift" class="logo-img">
+            <span class="text-white">VANGUARD<span class="text-amber-500">.GIFT</span></span>
+          </a>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Enterprise corporate gifting & merchandise fulfillment platform across India.
+          </p>
+          <div class="footer-social-flex">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn social-instagram" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn social-facebook" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn social-linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn social-twitter" title="Twitter / X" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-amber-500 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-500 transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-amber-500 transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-amber-500 transition-colors">Pricing Tiers</a></li>
+            <li><a href="blog.html" class="hover:text-amber-500 transition-colors">Blog & Journal</a></li>
+            <li><a href="contact.html" class="hover:text-amber-500 transition-colors">Contact Sales</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Enterprise SLA</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><span class="text-amber-500 font-semibold">24h Express</span> Dispatch SLA</li>
+            <li><span class="text-emerald-500 font-semibold">100% Optical</span> QC Inspection</li>
+            <li><span class="text-indigo-500 font-semibold">Pantone PMS</span> Color Matching</li>
+            <li><span class="text-amber-500 font-semibold">5 Regional</span> Logistics Hubs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Corporate Sales</h4>
+          <p class="text-xs text-slate-400 mb-2"><i class="bi bi-envelope me-1.5 text-amber-500"></i> corporate@vanguardgift.com</p>
+          <p class="text-xs text-slate-400 mb-4"><i class="bi bi-telephone me-1.5 text-amber-500"></i> +91 98765 43210</p>
+          <a href="contact.html" class="btn-gold text-xs w-full block text-center py-2.5">Connect Sales Team</a>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Vanguard Gift & Merchandise Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function togglePricingPeriod(isAnnual) {
+      const starter = document.getElementById('price-starter');
+      const business = document.getElementById('price-business');
+      if (isAnnual) {
+        starter.innerHTML = '₹20,000<span class="text-xs font-medium text-slate-400">/month</span>';
+        business.innerHTML = '₹60,000<span class="text-xs font-medium text-slate-400">/month</span>';
+      } else {
+        starter.innerHTML = '₹25,000<span class="text-xs font-medium text-slate-400">/month</span>';
+        business.innerHTML = '₹75,000<span class="text-xs font-medium text-slate-400">/month</span>';
+      }
+    }
+  </script>
+</body>
+</html>

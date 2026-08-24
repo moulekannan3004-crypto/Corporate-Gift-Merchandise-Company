@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanguard Gift & Co. | Enterprise Corporate Gifting & Procurement Platform</title>
+  <meta name="description" content="Source, customize, approve and deliver luxury branded corporate gifts and merchandise at enterprise scale.">
+  
+  <!-- Favicon Logo Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header class="navbar-main">
+    <div class="container-custom navbar-content">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/favicon.svg" alt="Vanguard Gift" class="logo-img">
+        <span>VANGUARD<span class="text-amber-500">.GIFT</span></span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link active">Home 1 <i class="bi bi-chevron-down ms-1 text-xs"></i></a>
+            <div class="dropdown-menu-custom">
+              <a href="index.html" class="dropdown-item-custom active">
+                <i class="bi bi-house-door text-amber-500"></i>
+                <div>
+                  <div class="font-bold">Home 01</div>
+                  <div class="text-[11px] text-slate-400 font-normal">General Services</div>
+                </div>
+              </a>
+              <a href="home-digital-agency.html" class="dropdown-item-custom">
+                <i class="bi bi-brush text-indigo-500"></i>
+                <div>
+                  <div class="font-bold">Home 02</div>
+                  <div class="text-[11px] text-slate-400 font-normal">Agency & SaaS</div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions & Controls -->
+      <div class="nav-actions">
+        <!-- LTR to RTL Layout Arrow Toggle Button -->
+        <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)">
+          <span class="text-amber-500 font-extrabold">LTR</span>
+          <i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i>
+          <span class="opacity-60 text-slate-400">RTL</span>
+        </button>
+
+        <!-- Light/Dark Toggle -->
+        <button class="control-btn theme-toggle-btn" title="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+
+        <!-- Client Portal Login Button -->
+        <a href="login.html" class="btn-outline text-xs !py-2 !px-3.5 font-bold flex items-center gap-1.5" title="Client Portal Login">
+          <i class="bi bi-box-arrow-in-right text-amber-500 font-bold"></i> Login
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button id="mobileNavToggleBtn" class="control-btn mobile-nav-toggle lg:hidden" title="Menu">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="contact.html" class="btn-gold hidden sm:inline-flex">
+          <i class="bi bi-send me-1"></i> Get Proposal
+        </a>
+      </div>
+    </div>
+
+    <!-- Responsive Mobile Drawer -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer">
+      <a href="index.html" class="mobile-nav-link active">Home 01 <i class="bi bi-house-door"></i></a>
+      <a href="home-digital-agency.html" class="mobile-nav-link">Home 02 (Agency & SaaS) <i class="bi bi-brush"></i></a>
+      <a href="about.html" class="mobile-nav-link">About Us <i class="bi bi-info-circle"></i></a>
+      <a href="services.html" class="mobile-nav-link">Services <i class="bi bi-grid"></i></a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing <i class="bi bi-tag"></i></a>
+      <a href="blog.html" class="mobile-nav-link">Blog <i class="bi bi-newspaper"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Contact <i class="bi bi-envelope"></i></a>
+      <a href="admin/index.html" class="mobile-nav-link text-indigo-600 font-bold">Admin Dashboard <i class="bi bi-shield-lock"></i></a>
+    </div>
+  </header>
+
+  <!-- Hero Section (Editorial Split Composition) -->
+  <section class="hero-section">
+    <div class="container-custom">
+      <div class="hero-grid">
+        <!-- Left Content -->
+        <div>
+          <span class="badge-gold mb-4"><i class="bi bi-stars"></i> Enterprise Gifting Platform</span>
+          <h1 class="hero-title">
+            One Platform.<br>
+            <span class="gradient-text">Every Corporate Gift.</span>
+          </h1>
+          <p class="hero-description">
+            Source, customize, approve and deliver branded gifts at enterprise scale across multi-city locations with real-time tracking and SLA guarantees.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="order-builder.html" class="btn-gold text-lg px-8 py-4">
+              <i class="bi bi-sliders"></i> Build a Corporate Order
+            </a>
+            <a href="products.html" class="btn-outline text-lg px-8 py-4">
+              Explore Collection <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Trust metrics bar -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <div>
+              <div class="text-2xl font-bold text-amber-500 counter-val" data-target="250000">0</div>
+              <div class="text-xs text-slate-500 font-medium">Gifts Delivered</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold counter-val" data-target="480">0</div>
+              <div class="text-xs text-slate-500 font-medium">Enterprise Clients</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-emerald-500">99.4%</div>
+              <div class="text-xs text-slate-500 font-medium">SLA On-Time</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content: Corporate Gift Universe -->
+        <div class="hero-visual-card relative">
+          <img src="assets/images/hero_composition.jpg" alt="Corporate Gift Universe" class="w-full h-[540px] object-cover">
+          
+          <!-- Floating Badge 1: Order Status -->
+          <div class="hero-floating-badge badge-top">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold">Order #CG-10482</div>
+              <div class="text-[11px] text-emerald-500 font-semibold">500 Kits • In Production</div>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2: Multi-City Delivery -->
+          <div class="hero-floating-badge badge-bottom">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-500 flex items-center justify-center font-bold">
+              <i class="bi bi-truck"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold">5-City Multi-Dispatch</div>
+              <div class="text-[11px] text-slate-400">Chennai • Bangalore • Mumbai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Brand Strip -->
+  <section class="brand-strip">
+    <div class="container-custom mb-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-400 uppercase">Trusted by 480+ Enterprise Procurement Leaders</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-500 border border-amber-500/20">
+          <i class="bi bi-patch-check-fill"></i> SLA Guaranteed Suppliers
+        </div>
+      </div>
+    </div>
+
+    <!-- Infinite Scroll Container -->
+    <div class="brand-marquee-container">
+      <div class="brand-marquee-track">
+        <!-- Set 1 -->
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-pentagon-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">NOVA CORP</div>
+            <span class="brand-pill-tag">12,500+ Kits Shipped</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-cpu-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">AXION TECH</div>
+            <span class="brand-pill-tag">Custom Audio Partner</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-diamond-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">VERTEX GLOBAL</div>
+            <span class="brand-pill-tag">Executive VIP Leather</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-globe-americas"></i></div>
+          <div>
+            <div class="brand-pill-title">ORBIT SAAS</div>
+            <span class="brand-pill-tag">Multi-City Dispatch</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-compass-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">NORTHSTAR</div>
+            <span class="brand-pill-tag">5,000 Eco Hampers</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-sun-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">LUMEN MEDIA</div>
+            <span class="brand-pill-tag">Gold Foil Stamping</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-shield-check"></i></div>
+          <div>
+            <div class="brand-pill-title">APEX CAPITAL</div>
+            <span class="brand-pill-tag">Annual Procurement</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-box-seam-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">VORTEX LOGISTICS</div>
+            <span class="brand-pill-tag">Desk-Drop Delivery</span>
+          </div>
+        </div>
+
+        <!-- Set 2 (Duplicate for Seamless Loop) -->
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-pentagon-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">NOVA CORP</div>
+            <span class="brand-pill-tag">12,500+ Kits Shipped</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-cpu-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">AXION TECH</div>
+            <span class="brand-pill-tag">Custom Audio Partner</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-diamond-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">VERTEX GLOBAL</div>
+            <span class="brand-pill-tag">Executive VIP Leather</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-globe-americas"></i></div>
+          <div>
+            <div class="brand-pill-title">ORBIT SAAS</div>
+            <span class="brand-pill-tag">Multi-City Dispatch</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-compass-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">NORTHSTAR</div>
+            <span class="brand-pill-tag">5,000 Eco Hampers</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-sun-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">LUMEN MEDIA</div>
+            <span class="brand-pill-tag">Gold Foil Stamping</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-shield-check"></i></div>
+          <div>
+            <div class="brand-pill-title">APEX CAPITAL</div>
+            <span class="brand-pill-tag">Annual Procurement</span>
+          </div>
+        </div>
+
+        <div class="brand-pill-card">
+          <div class="brand-pill-icon"><i class="bi bi-box-seam-fill"></i></div>
+          <div>
+            <div class="brand-pill-title">VORTEX LOGISTICS</div>
+            <span class="brand-pill-tag">Desk-Drop Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Signature Feature 1: Multi-Step Order Builder Teaser -->
+  <section class="section-padding bg-slate-50/50 dark:bg-slate-900/50">
+    <div class="container-custom">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Signature Configurator</span>
+        <h2 class="section-title">Configure Bulk Orders in Minutes</h2>
+        <p class="section-subtitle mx-auto">Select items, upload vector logos, calculate volume discounts and allocate multi-city shipments seamlessly.</p>
+      </div>
+
+      <div class="builder-card">
+        <div class="builder-steps">
+          <button class="builder-step-btn active" data-step="1"><i class="bi bi-grid-fill"></i> 01 Category</button>
+          <button class="builder-step-btn" data-step="2"><i class="bi bi-box"></i> 02 Products</button>
+          <button class="builder-step-btn" data-step="3"><i class="bi bi-brush"></i> 03 Branding</button>
+          <button class="builder-step-btn" data-step="4"><i class="bi bi-calculator"></i> 04 Quantity</button>
+          <button class="builder-step-btn" data-step="5"><i class="bi bi-geo-alt"></i> 05 Delivery</button>
+          <button class="builder-step-btn" data-step="6"><i class="bi bi-check2-circle"></i> 06 Review</button>
+        </div>
+
+        <div class="builder-body">
+          <!-- Step Work Area -->
+          <div class="builder-content-area flex flex-col justify-between">
+            <div>
+              <!-- Step 1 Content: Choose Gift Category -->
+              <div class="builder-step-content" data-step-content="1">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Choose Gift Category</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Select a curated procurement tier to unlock custom product options.</p>
+                  </div>
+                  <span class="badge-gold text-[11px]"><i class="bi bi-stars"></i> 6 Categories Available</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                  <!-- Category 1: Executive Kits -->
+                  <div class="glass-card builder-category-card selected" onclick="selectBuilderCategory('Executive Kits', this)">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2.5">
+                        <div class="card-icon-badge bg-amber-500/10 text-amber-500">
+                          <i class="bi bi-briefcase-fill"></i>
+                        </div>
+                        <span class="badge-gold text-[9px] font-bold">BESTSELLER</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop" alt="Executive Kits" class="builder-category-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Executive Kits</div>
+                      <div class="text-xs text-slate-500 mt-1 leading-snug">VIP Onboarding & Leadership welcome gift boxes</div>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                      <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹1,150</strong>/unit</span>
+                      <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 10 Days SLA</span>
+                    </div>
+                  </div>
+
+                  <!-- Category 2: Tech Accessories -->
+                  <div class="glass-card builder-category-card" onclick="selectBuilderCategory('Tech Accessories', this)">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2.5">
+                        <div class="card-icon-badge bg-indigo-500/10 text-indigo-500">
+                          <i class="bi bi-laptop-fill"></i>
+                        </div>
+                        <span class="badge-indigo text-[9px] font-bold">POPULAR</span>
+                      </div>
+                      <img src="assets/images/tech_accessories.jpg" alt="Tech Accessories" class="builder-category-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Tech Accessories</div>
+                      <div class="text-xs text-slate-500 mt-1 leading-snug">Headphones, MagSafe chargers & audio gear</div>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                      <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹1,450</strong>/unit</span>
+                      <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 7 Days SLA</span>
+                    </div>
+                  </div>
+
+                  <!-- Category 3: Eco-Friendly Hampers -->
+                  <div class="glass-card builder-category-card" onclick="selectBuilderCategory('Eco-Friendly Gifts', this)">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2.5">
+                        <div class="card-icon-badge bg-emerald-500/10 text-emerald-500">
+                          <i class="bi bi-leaf-fill"></i>
+                        </div>
+                        <span class="badge-emerald text-[9px] font-bold">SUSTAINABLE</span>
+                      </div>
+                      <img src="assets/images/eco_hampers.jpg" alt="Eco-Friendly Hampers" class="builder-category-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Eco-Friendly Hampers</div>
+                      <div class="text-xs text-slate-500 mt-1 leading-snug">Bamboo flasks, cork journals & organic tea</div>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                      <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹980</strong>/unit</span>
+                      <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 8 Days SLA</span>
+                    </div>
+                  </div>
+
+                  <!-- Category 4: Italian Leather -->
+                  <div class="glass-card builder-category-card" onclick="selectBuilderCategory('Italian Leather Stationery', this)">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2.5">
+                        <div class="card-icon-badge bg-amber-600/10 text-amber-600">
+                          <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <span class="badge-gold text-[9px] font-bold">LUXURY</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=400&auto=format&fit=crop" alt="Italian Leather" class="builder-category-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Italian Leather</div>
+                      <div class="text-xs text-slate-500 mt-1 leading-snug">Foil embossed journals & rollerball pens</div>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                      <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹650</strong>/unit</span>
+                      <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 5 Days SLA</span>
+                    </div>
+                  </div>
+
+                  <!-- Category 5: Corporate Apparel -->
+                  <div class="glass-card builder-category-card" onclick="selectBuilderCategory('Custom Corporate Apparel', this)">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2.5">
+                        <div class="card-icon-badge bg-blue-500/10 text-blue-500">
+                          <i class="bi bi-person-workspace"></i>
+                        </div>
+                        <span class="badge-indigo text-[9px] font-bold">CUSTOM FIT</span>
+                      </div>
+                      <img src="assets/images/corporate_apparel.jpg" alt="Corporate Apparel" class="builder-category-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Corporate Apparel</div>
+                      <div class="text-xs text-slate-500 mt-1 leading-snug">Embroidered polo shirts & fleece jackets</div>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                      <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹850</strong>/unit</span>
+                      <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 12 Days SLA</span>
+                    </div>
+                  </div>
+
+                  <!-- Category 6: Gourmet & Wellness -->
+                  <div class="glass-card builder-category-card" onclick="selectBuilderCategory('Wellness & Gourmet', this)">
+                    <div>
+                      <div class="flex items-center gap-2 mb-2.5">
+                        <div class="card-icon-badge bg-rose-500/10 text-rose-500">
+                          <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                        <span class="badge-gold text-[9px] font-bold">CELEBRATION</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=400&auto=format&fit=crop" alt="Gourmet & Wellness" class="builder-category-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Gourmet & Wellness</div>
+                      <div class="text-xs text-slate-500 mt-1 leading-snug">Artisanal chocolates, tea sets & wellness gifts</div>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                      <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹1,200</strong>/unit</span>
+                      <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 6 Days SLA</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Included Capabilities Banner -->
+                <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                  <div class="flex items-center gap-3">
+                    <i class="bi bi-shield-check text-2xl text-emerald-500"></i>
+                    <div>
+                      <div class="font-bold text-slate-800 dark:text-white">Included Standard Inclusions</div>
+                      <div class="text-[11px] text-slate-400">Free Vector Logo Engraving • Rigid Gift Presentation Box • Multi-City Dispatch</div>
+                    </div>
+                  </div>
+                  <span class="badge-emerald text-[10px]">100% Quality Guaranteed</span>
+                </div>
+              </div>
+
+              <!-- Step 2 Content: Included Gift Items -->
+              <div class="builder-step-content hidden" data-step-content="2">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Select Included Box Products</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Toggle products to include inside your custom branded gift box.</p>
+                  </div>
+                  <span class="badge-indigo text-[11px]"><i class="bi bi-box-seam me-1"></i> 3 Selected Default</span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                  <!-- Product 1 -->
+                  <div class="glass-card builder-product-card included-active" onclick="toggleBuilderProduct('Leather Journal', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="card-icon-badge bg-amber-500/10 text-amber-500">
+                          <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <span class="badge-gold text-[9px] font-bold">INCLUDED</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=300&auto=format&fit=crop" alt="Leather Journal" class="builder-product-thumb">
+                      <div class="font-extrabold text-xs text-slate-900 dark:text-white">Leather Journal</div>
+                      <div class="text-[11px] text-slate-400 mt-0.5">Italian PU • 200 Pages</div>
+                    </div>
+                  </div>
+
+                  <!-- Product 2 -->
+                  <div class="glass-card builder-product-card included-active" onclick="toggleBuilderProduct('Smart Thermos', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="card-icon-badge bg-indigo-500/10 text-indigo-500">
+                          <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                        <span class="badge-gold text-[9px] font-bold">INCLUDED</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=300&auto=format&fit=crop" alt="Smart Thermos" class="builder-product-thumb">
+                      <div class="font-extrabold text-xs text-slate-900 dark:text-white">Smart Thermos</div>
+                      <div class="text-[11px] text-slate-400 mt-0.5">500ml • LED Display</div>
+                    </div>
+                  </div>
+
+                  <!-- Product 3 -->
+                  <div class="glass-card builder-product-card included-active" onclick="toggleBuilderProduct('Wireless Charger', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="card-icon-badge bg-emerald-500/10 text-emerald-500">
+                          <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <span class="badge-gold text-[9px] font-bold">INCLUDED</span>
+                      </div>
+                      <img src="assets/images/tech_accessories.jpg" alt="Wireless Charger" class="builder-product-thumb">
+                      <div class="font-extrabold text-xs text-slate-900 dark:text-white">Wireless Charger</div>
+                      <div class="text-[11px] text-slate-400 mt-0.5">15W Fast Charge • Metal</div>
+                    </div>
+                  </div>
+
+                  <!-- Product 4 -->
+                  <div class="glass-card builder-product-card" onclick="toggleBuilderProduct('Rollerball Pen', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="card-icon-badge bg-amber-600/10 text-amber-600">
+                          <i class="bi bi-pen-fill"></i>
+                        </div>
+                        <span class="badge-emerald text-[9px] font-bold">+ ₹180 / unit</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=300&auto=format&fit=crop" alt="Rollerball Pen" class="builder-product-thumb">
+                      <div class="font-extrabold text-xs text-slate-900 dark:text-white">Rollerball Pen</div>
+                      <div class="text-[11px] text-slate-400 mt-0.5">Laser Etched Metallic Pen</div>
+                    </div>
+                  </div>
+
+                  <!-- Product 5 -->
+                  <div class="glass-card builder-product-card" onclick="toggleBuilderProduct('Bluetooth Earbuds', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="card-icon-badge bg-purple-500/10 text-purple-500">
+                          <i class="bi bi-headphones"></i>
+                        </div>
+                        <span class="badge-emerald text-[9px] font-bold">+ ₹450 / unit</span>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=300&auto=format&fit=crop" alt="Bluetooth Earbuds" class="builder-product-thumb">
+                      <div class="font-extrabold text-xs text-slate-900 dark:text-white">Bluetooth Earbuds</div>
+                      <div class="text-[11px] text-slate-400 mt-0.5">ANC • Custom Case</div>
+                    </div>
+                  </div>
+
+                  <!-- Product 6 -->
+                  <div class="glass-card builder-product-card" onclick="toggleBuilderProduct('Desk Clock', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="card-icon-badge bg-rose-500/10 text-rose-500">
+                          <i class="bi bi-clock-fill"></i>
+                        </div>
+                        <span class="badge-emerald text-[9px] font-bold">+ ₹320 / unit</span>
+                      </div>
+                      <img src="assets/images/eco_hampers.jpg" alt="Bamboo Desk Clock" class="builder-product-thumb">
+                      <div class="font-extrabold text-xs text-slate-900 dark:text-white">Bamboo Desk Clock</div>
+                      <div class="text-[11px] text-slate-400 mt-0.5">Eco Wood • Alarm</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3 Content: Branding Technique -->
+              <div class="builder-step-content hidden" data-step-content="3">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Select Branding & Customization</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Choose artwork technique for product surface engraving and box sleeve packaging.</p>
+                  </div>
+                  <span class="badge-gold text-[11px]"><i class="bi bi-vector-pen me-1"></i> Vector Artwork Included</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <!-- Branding 1 -->
+                  <div class="glass-card builder-branding-card selected" onclick="selectBuilderBranding('Laser Engraving + Custom Sleeve', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2.5">
+                        <div class="flex items-center gap-2">
+                          <div class="card-icon-badge bg-amber-500/10 text-amber-500">
+                            <i class="bi bi-vector-pen"></i>
+                          </div>
+                          <span class="badge-gold text-[9px] font-bold">FIBER LASER</span>
+                        </div>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=400&auto=format&fit=crop" alt="Laser Engraving" class="builder-branding-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Laser Engraving + Custom Sleeve</div>
+                      <p class="text-xs text-slate-400 mt-1 leading-snug">High precision fiber laser etching on metal/leather surfaces with full color rigid box sleeve.</p>
+                    </div>
+                  </div>
+
+                  <!-- Branding 2 -->
+                  <div class="glass-card builder-branding-card" onclick="selectBuilderBranding('Gold Foil Stamping', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2.5">
+                        <div class="flex items-center gap-2">
+                          <div class="card-icon-badge bg-amber-400/10 text-amber-400">
+                            <i class="bi bi-stars"></i>
+                          </div>
+                          <span class="badge-gold text-[9px] font-bold">HOT FOIL</span>
+                        </div>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=400&auto=format&fit=crop" alt="Gold Foil Stamping" class="builder-branding-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Metallic Gold & Silver Foil</div>
+                      <p class="text-xs text-slate-400 mt-1 leading-snug">Reflective metallic hot foil stamping on box lid and notebook covers for luxury corporate finish.</p>
+                    </div>
+                  </div>
+
+                  <!-- Branding 3 -->
+                  <div class="glass-card builder-branding-card" onclick="selectBuilderBranding('Full Color UV Digital Print', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2.5">
+                        <div class="flex items-center gap-2">
+                          <div class="card-icon-badge bg-indigo-500/10 text-indigo-500">
+                            <i class="bi bi-palette-fill"></i>
+                          </div>
+                          <span class="badge-indigo text-[9px] font-bold">300DPI UV</span>
+                        </div>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop" alt="UV Digital Print" class="builder-branding-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Full-Color Digital UV Print</div>
+                      <p class="text-xs text-slate-400 mt-1 leading-snug">Vibrant 300DPI photo-realistic artwork printing directly onto thermos body and power bank.</p>
+                    </div>
+                  </div>
+
+                  <!-- Branding 4 -->
+                  <div class="glass-card builder-branding-card" onclick="selectBuilderBranding('Blind Heat Debossing', this)">
+                    <div>
+                      <div class="flex items-center justify-between mb-2.5">
+                        <div class="flex items-center gap-2">
+                          <div class="card-icon-badge bg-emerald-500/10 text-emerald-500">
+                            <i class="bi bi-layers-fill"></i>
+                          </div>
+                          <span class="badge-emerald text-[9px] font-bold">HEAT DEBOSS</span>
+                        </div>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=400&auto=format&fit=crop" alt="Blind Heat Debossing" class="builder-branding-thumb">
+                      <div class="font-extrabold text-sm text-slate-900 dark:text-white">Blind Heat Debossing & Ribbon</div>
+                      <p class="text-xs text-slate-400 mt-1 leading-snug">Deep heat-pressed logo indentation on Italian leather with custom branded satin ribbon wrapping.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4 Content (Quantity & Tier Math) -->
+              <div class="builder-step-content hidden" data-step-content="4">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Set Total Quantity & Volume Tier</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Higher volume tiers unlock deeper unit discounts & priority SLA dispatch.</p>
+                  </div>
+                  <span class="badge-emerald text-[11px]"><i class="bi bi-tag-fill me-1"></i> Save up to 37%</span>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 mb-5">
+                  <label class="block text-xs font-bold text-slate-400 mb-2 uppercase">Enter Target Order Quantity:</label>
+                  <div class="flex items-center gap-4">
+                    <input type="number" id="builderQtyInput" value="500" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-2xl font-extrabold text-amber-500 outline-none">
+                    <span class="text-sm font-bold text-slate-500">Units</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                  <button class="builder-qty-tier-btn" data-qty="100">
+                    <div class="text-xs text-slate-400 font-bold">100 Units</div>
+                    <div class="text-base font-extrabold text-slate-800 dark:text-white mt-1">₹1,150<span class="text-[10px] text-slate-400 font-normal">/u</span></div>
+                    <span class="badge-indigo text-[8px] mt-1 inline-block">Standard Tier</span>
+                  </button>
+
+                  <button class="builder-qty-tier-btn" data-qty="250">
+                    <div class="text-xs text-slate-400 font-bold">250 Units</div>
+                    <div class="text-base font-extrabold text-slate-800 dark:text-white mt-1">₹980<span class="text-[10px] text-slate-400 font-normal">/u</span></div>
+                    <span class="badge-emerald text-[8px] mt-1 inline-block">-15% Off</span>
+                  </button>
+
+                  <button class="builder-qty-tier-btn active" data-qty="500">
+                    <div class="text-xs text-amber-500 font-bold">500 Units</div>
+                    <div class="text-base font-extrabold text-amber-500 mt-1">₹850<span class="text-[10px] text-amber-400 font-normal">/u</span></div>
+                    <span class="badge-gold text-[8px] mt-1 inline-block">Best Value</span>
+                  </button>
+
+                  <button class="builder-qty-tier-btn" data-qty="1000">
+                    <div class="text-xs text-emerald-500 font-bold">1000+ Units</div>
+                    <div class="text-base font-extrabold text-emerald-500 mt-1">₹720<span class="text-[10px] text-emerald-400 font-normal">/u</span></div>
+                    <span class="badge-emerald text-[8px] mt-1 inline-block">Max Savings</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 5 Content (Multi-city location allocation) -->
+              <div class="builder-step-content hidden" data-step-content="5">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Allocate Delivery Destinations</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Distribute total order quantity across regional corporate hubs or desk delivery.</p>
+                  </div>
+                  <span class="badge-indigo text-[11px]"><i class="bi bi-geo-alt-fill me-1"></i> Multi-City Hubs</span>
+                </div>
+
+                <div class="space-y-3 mb-4">
+                  <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-sm shadow-sm"><i class="bi bi-building font-bold"></i></div>
+                      <div>
+                        <div class="font-bold text-sm text-slate-900 dark:text-white">Chennai HQ Hub</div>
+                        <div class="text-[11px] text-slate-400">Main Office • <span class="text-emerald-500 font-semibold">SLA: 24h</span></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="number" value="150" data-city="Chennai" class="builder-loc-input w-24 p-2 text-right bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl font-extrabold text-sm outline-none focus:border-amber-500">
+                      <span class="text-xs text-slate-400 font-medium">units</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center font-bold text-sm shadow-sm"><i class="bi bi-cpu font-bold"></i></div>
+                      <div>
+                        <div class="font-bold text-sm text-slate-900 dark:text-white">Bangalore Tech Hub</div>
+                        <div class="text-[11px] text-slate-400">R&D Campus • <span class="text-emerald-500 font-semibold">SLA: 24h</span></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="number" value="120" data-city="Bangalore" class="builder-loc-input w-24 p-2 text-right bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl font-extrabold text-sm outline-none focus:border-amber-500">
+                      <span class="text-xs text-slate-400 font-medium">units</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-sm shadow-sm"><i class="bi bi-briefcase font-bold"></i></div>
+                      <div>
+                        <div class="font-bold text-sm text-slate-900 dark:text-white">Mumbai Commercial Hub</div>
+                        <div class="text-[11px] text-slate-400">Finance Tower • <span class="text-emerald-500 font-semibold">SLA: 48h</span></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="number" value="100" data-city="Mumbai" class="builder-loc-input w-24 p-2 text-right bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl font-extrabold text-sm outline-none focus:border-amber-500">
+                      <span class="text-xs text-slate-400 font-medium">units</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between p-3.5 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-sm shadow-sm"><i class="bi bi-house-heart font-bold"></i></div>
+                      <div>
+                        <div class="font-bold text-sm text-slate-900 dark:text-white">Remote Employees (Individual Desk Drop)</div>
+                        <div class="text-[11px] text-slate-400">Pan-India Courier • <span class="text-emerald-500 font-semibold">SLA: 72h</span></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="number" value="130" data-city="Remote Desk-Drop" class="builder-loc-input w-24 p-2 text-right bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl font-extrabold text-sm outline-none focus:border-amber-500">
+                      <span class="text-xs text-slate-400 font-medium">units</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Express Logistics Guarantee Banner -->
+                <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs mb-2">
+                  <div class="flex items-center gap-3">
+                    <i class="bi bi-truck text-2xl text-amber-500"></i>
+                    <div>
+                      <div class="font-bold text-slate-900 dark:text-white">Pan-India Warehousing & Express Desk Drop</div>
+                      <div class="text-[11px] text-slate-400">All shipments tracked via real-time GPS telemetry with insured transit.</div>
+                    </div>
+                  </div>
+                  <span class="badge-emerald text-[10px] whitespace-nowrap"><i class="bi bi-shield-check me-1"></i> SLA Guaranteed</span>
+                </div>
+              </div>
+
+              <!-- Step 6 Content: Final Review & Confirmation -->
+              <div class="builder-step-content hidden" data-step-content="6">
+                <div class="flex items-center justify-between mb-3">
+                  <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Review & Submit Order Brief</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Verify your order configuration below before submitting for official quotation.</p>
+                  </div>
+                  <span class="badge-emerald text-[11px]"><i class="bi bi-check-circle-fill me-1"></i> Ready for RFP</span>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl space-y-3 text-xs mb-3 border border-slate-200 dark:border-slate-800">
+                  <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <span class="text-slate-400 font-bold">Target Category:</span>
+                    <span id="summaryCategory" class="font-bold text-amber-500">Executive Kits</span>
+                  </div>
+                  <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <span class="text-slate-400 font-bold">Selected Products:</span>
+                    <span id="summaryItems" class="font-bold">Leather Journal, Smart Thermos, Wireless Charger</span>
+                  </div>
+                  <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <span class="text-slate-400 font-bold">Branding Technique:</span>
+                    <span id="summaryBranding" class="font-bold text-indigo-400">Laser Engraving + Custom Sleeve</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400 font-bold">Guaranteed SLA Lead Time:</span>
+                    <span id="summaryLeadTime" class="font-bold text-emerald-500">12 Business Days</span>
+                  </div>
+                </div>
+
+                <!-- Account Manager & Digital Proofing SLA Card -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                  <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-sm">
+                      <i class="bi bi-person-badge-fill"></i>
+                    </div>
+                    <div>
+                      <div class="font-bold text-xs text-slate-900 dark:text-white">Assigned Key Account Manager</div>
+                      <div class="text-[11px] text-slate-400">Direct WhatsApp support within 15 mins</div>
+                    </div>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500/10 text-indigo-500 flex items-center justify-center font-bold text-sm">
+                      <i class="bi bi-file-earmark-pdf-fill"></i>
+                    </div>
+                    <div>
+                      <div class="font-bold text-xs text-slate-900 dark:text-white">3D Virtual Mockup & Proofing</div>
+                      <div class="text-[11px] text-slate-400">Vector artwork preview before production</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Navigation Controls -->
+            <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 mt-6">
+              <button id="builderPrevBtn" class="btn-outline text-xs !py-3 !px-5" style="visibility: hidden;">
+                <i class="bi bi-chevron-left me-1"></i> Previous Step
+              </button>
+              <div class="text-xs text-slate-400 font-semibold hidden sm:block">
+                Step <span id="builderCurrentStepNum">1</span> of 6
+              </div>
+              <button id="builderNextBtn" class="btn-gold text-xs !py-3 !px-6 shadow-lg shadow-amber-500/20">
+                Continue to Next Step <i class="bi bi-chevron-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Summary Panel -->
+          <div class="builder-summary-panel">
+            <div>
+              <div class="text-xs font-bold text-amber-500 tracking-wider uppercase mb-2">Live Order Configurator</div>
+              <div class="text-xl font-bold mb-4">Summary Estimate</div>
+
+              <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Category:</span>
+                  <span id="summaryCategory" class="font-bold">Executive Kits</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Total Quantity:</span>
+                  <span id="summaryQty" class="font-bold text-amber-500">500 Units</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Tier Unit Cost:</span>
+                  <span id="summaryUnitPrice" class="font-bold">₹850</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Est. SLA Lead Time:</span>
+                  <span id="summaryLeadTime" class="font-bold text-emerald-500">12 Business Days</span>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <div class="text-xs text-slate-500 mb-1">Destination Allocation:</div>
+                <div id="summaryLocationsList"></div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-400 uppercase tracking-wider">Estimated Total</div>
+              <div id="summaryTotalEst" class="text-3xl font-extrabold text-amber-500 mb-4">₹4,25,000</div>
+              <a href="order-builder.html" class="btn-primary w-full text-center">Launch Full Builder</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Category Experience (Full 8-Category Asymmetric Editorial Grid) -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="section-header">
+        <span class="section-eyebrow">Curated Collections</span>
+        <h2 class="section-title">Editorial Gift Categories</h2>
+        <p class="section-subtitle">Explore 8 distinct enterprise gift categories designed for maximum brand impact.</p>
+      </div>
+
+      <div class="category-asymmetric-grid">
+        <!-- Card 1: Executive Kits -->
+        <div class="category-card col-span-8" style="background-image: url('assets/images/executive_kit.jpg');">
+          <div class="card-content">
+            <span class="badge-gold mb-2">Bestseller • Category 01</span>
+            <h3 class="text-2xl font-bold mb-1">Executive Onboarding Kits</h3>
+            <p class="text-sm text-slate-200 mb-4">Complete welcome boxes with leather journal, thermos, wireless charger & pen.</p>
+            <a href="products.html" class="btn-gold !py-2 !px-4 text-xs">Explore Executive Kits</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Italian Leather -->
+        <div class="category-card col-span-4" style="background-image: url('assets/images/leather_notebook.jpg');">
+          <div class="card-content">
+            <span class="badge-emerald mb-2">Category 02</span>
+            <h3 class="text-xl font-bold mb-1">Italian Leather Stationery</h3>
+            <a href="products.html" class="btn-outline text-white border-white/40 hover:bg-white/20 !py-2 !px-4 text-xs">View Stationery</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Tech Accessories -->
+        <div class="category-card col-span-4" style="background-image: url('assets/images/tech_accessories.jpg');">
+          <div class="card-content">
+            <span class="badge-indigo mb-2">Category 03</span>
+            <h3 class="text-xl font-bold mb-1">Tech Accessories & Audio</h3>
+            <a href="products.html" class="btn-outline text-white border-white/40 hover:bg-white/20 !py-2 !px-4 text-xs">View Tech Kits</a>
+          </div>
+        </div>
+
+        <!-- Card 4: Eco Hampers -->
+        <div class="category-card col-span-4" style="background-image: url('assets/images/eco_hampers.jpg');">
+          <div class="card-content">
+            <span class="badge-emerald mb-2">Sustainable • Category 04</span>
+            <h3 class="text-xl font-bold mb-1">Eco-Friendly Hampers</h3>
+            <a href="products.html" class="btn-outline text-white border-white/40 hover:bg-white/20 !py-2 !px-4 text-xs">Explore Eco Line</a>
+          </div>
+        </div>
+
+        <!-- Card 5: Apparel & Apparel -->
+        <div class="category-card col-span-4" style="background-image: url('assets/images/corporate_apparel.jpg');">
+          <div class="card-content">
+            <span class="badge-gold mb-2">Category 05</span>
+            <h3 class="text-xl font-bold mb-1">Custom Corporate Apparel</h3>
+            <a href="products.html" class="btn-outline text-white border-white/40 hover:bg-white/20 !py-2 !px-4 text-xs">View Polos & Fleeces</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Feature: Live Branding Customization Studio -->
+  <section class="section-padding bg-slate-900 text-white">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Interactive Preview Controls -->
+        <div class="lg:col-span-5">
+          <span class="badge-gold mb-3"><i class="bi bi-palette"></i> Live Branding Studio</span>
+          <h2 class="text-3xl font-extrabold mb-4">Precision Customization Engine</h2>
+          <p class="text-slate-400 text-sm mb-6">Preview logo placement, metallic foil stamping, and packaging box sleeve options on real product mockups before ordering.</p>
+
+          <div class="space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-slate-300 mb-2">Select Branding Technique:</label>
+              <select id="brandingTechniqueSelect" class="w-full p-3 rounded-xl border border-slate-700 bg-slate-950 text-white outline-none">
+                <option value="Precision Laser Engraving">Precision Laser Engraving</option>
+                <option value="Metallic Gold Foil Stamping">Metallic Gold Foil Stamping</option>
+                <option value="Blind Heat Debossing">Blind Heat Debossing</option>
+                <option value="Full-Color Digital UV Print">Full-Color Digital UV Print</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-300 mb-2">Accent Surface Color:</label>
+              <div class="flex items-center gap-3">
+                <button class="customizer-color-btn w-8 h-8 rounded-full bg-slate-900 ring-2 ring-amber-500" data-color="#0f172a" title="Obsidian Black"></button>
+                <button class="customizer-color-btn w-8 h-8 rounded-full bg-amber-600" data-color="#d97706" title="Vanguard Amber"></button>
+                <button class="customizer-color-btn w-8 h-8 rounded-full bg-emerald-700" data-color="#047857" title="Enterprise Emerald"></button>
+                <button class="customizer-color-btn w-8 h-8 rounded-full bg-indigo-700" data-color="#4338ca" title="Royal Indigo"></button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-300 mb-2">Upload Brand Vector Logo (SVG/PNG):</label>
+              <label class="btn-outline border-slate-700 text-white w-full text-center py-2.5 cursor-pointer block">
+                <i class="bi bi-upload me-2"></i> Choose Vector Artwork File
+                <input type="file" id="customizerLogoInput" accept="image/*" class="hidden">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas Display -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6 rounded-2xl bg-slate-950/80 border-slate-800">
+            <div class="customizer-canvas-box h-[380px] bg-slate-900 border-slate-800 relative flex items-center justify-center">
+              <img src="assets/images/leather_notebook.jpg" id="customizerMockupImg" alt="Interactive Mockup" class="customizer-mockup-img h-[300px] object-contain">
+              <img id="customizerLogoOverlay" src="" alt="Logo Overlay Proof" class="customizer-logo-overlay hidden">
+            </div>
+            <div class="flex justify-between items-center mt-4 text-xs text-slate-400 border-t border-slate-800 pt-3">
+              <span>Status: <strong class="text-emerald-400">Live Vector Overlay Sync</strong></span>
+              <a href="customization.html" class="text-amber-500 font-bold">Open Full Studio <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Multi-Location Logistics Visualizer -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Logistics Intelligence</span>
+        <h2 class="section-title">Multi-City Delivery Distribution</h2>
+        <p class="section-subtitle mx-auto">Simultaneous dispatch across major regional corporate hubs with real-time tracking integration.</p>
+      </div>
+
+      <div class="logistics-map-card">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-3">
+            <div class="text-xs font-bold text-amber-500 uppercase tracking-widest">Active Order Manifest #CG-10482</div>
+            <h3 class="text-2xl font-extrabold">500 Total Executive Kits</h3>
+            
+            <div class="location-route-item">
+              <div>
+                <div class="font-bold text-sm">Chennai HQ Hub</div>
+                <div class="text-xs text-slate-400">Hub SLA: 24 Hours</div>
+              </div>
+              <div class="text-right">
+                <div class="font-extrabold text-amber-500">150 Units</div>
+                <span class="badge-emerald text-[9px]">Delivered</span>
+              </div>
+            </div>
+
+            <div class="location-route-item">
+              <div>
+                <div class="font-bold text-sm">Bangalore Tech Hub</div>
+                <div class="text-xs text-slate-400">Hub SLA: 24 Hours</div>
+              </div>
+              <div class="text-right">
+                <div class="font-extrabold text-amber-500">120 Units</div>
+                <span class="badge-gold text-[9px]">Out for Delivery</span>
+              </div>
+            </div>
+
+            <div class="location-route-item">
+              <div>
+                <div class="font-bold text-sm">Mumbai Commercial Hub</div>
+                <div class="text-xs text-slate-400">Hub SLA: 48 Hours</div>
+              </div>
+              <div class="text-right">
+                <div class="font-extrabold text-amber-500">100 Units</div>
+                <span class="badge-indigo text-[9px]">In Transit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="glass-panel p-6 rounded-2xl relative overflow-hidden">
+              <img src="assets/images/hero_composition.jpg" alt="Logistics Network" class="w-full h-80 object-cover rounded-xl opacity-90">
+              <div class="absolute inset-0 bg-slate-950/40 backdrop-blur-[2px] flex items-center justify-center p-6 text-center text-white">
+                <div>
+                  <i class="bi bi-geo-alt-fill text-4xl text-amber-500 mb-2 block"></i>
+                  <div class="text-xl font-extrabold">Real-Time SLA Guarantee</div>
+                  <p class="text-xs text-slate-200 max-w-md mx-auto mt-1">Every package is scanned at origin, regional hub, and desktop handoff with automated SMS notifications sent to HR leads.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Workflow Section (Interactive Stepper & Live Stage Explorer) -->
+  <section class="section-padding bg-slate-100/70 dark:bg-slate-900/70">
+    <div class="container-custom">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Standard Operating Procedure</span>
+        <h2 class="section-title">7-Step Enterprise Order Pipeline</h2>
+        <p class="section-subtitle mx-auto">From initial brief to multi-city desk delivery, explore our automated procurement SLA workflow.</p>
+      </div>
+
+      <!-- Interactive Stepper Track -->
+      <div class="workflow-timeline-wrapper">
+        <div class="workflow-track-line">
+          <div id="workflowProgressLine" class="workflow-progress-line" style="width: 50%;"></div>
+        </div>
+
+        <div class="workflow-nodes-grid" id="workflowNodesGrid">
+          <!-- Step 1 -->
+          <div class="workflow-step-node completed" onclick="switchWorkflowStep(1)" data-step-id="1">
+            <div class="workflow-icon-box">
+              <i class="bi bi-file-earmark-text-fill"></i>
+              <span class="workflow-step-badge">01</span>
+            </div>
+            <div class="workflow-step-title">Brief Request</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="workflow-step-node completed" onclick="switchWorkflowStep(2)" data-step-id="2">
+            <div class="workflow-icon-box">
+              <i class="bi bi-calculator-fill"></i>
+              <span class="workflow-step-badge">02</span>
+            </div>
+            <div class="workflow-step-title">Quotation</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="workflow-step-node completed" onclick="switchWorkflowStep(3)" data-step-id="3">
+            <div class="workflow-icon-box">
+              <i class="bi bi-shield-check"></i>
+              <span class="workflow-step-badge">03</span>
+            </div>
+            <div class="workflow-step-title">Design Proof</div>
+          </div>
+
+          <!-- Step 4 (Active by Default) -->
+          <div class="workflow-step-node active" onclick="switchWorkflowStep(4)" data-step-id="4">
+            <div class="workflow-icon-box">
+              <i class="bi bi-gear-wide-connected"></i>
+              <span class="workflow-step-badge">04</span>
+            </div>
+            <div class="workflow-step-title">Production</div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="workflow-step-node" onclick="switchWorkflowStep(5)" data-step-id="5">
+            <div class="workflow-icon-box">
+              <i class="bi bi-clipboard2-check-fill"></i>
+              <span class="workflow-step-badge">05</span>
+            </div>
+            <div class="workflow-step-title">Quality Check</div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="workflow-step-node" onclick="switchWorkflowStep(6)" data-step-id="6">
+            <div class="workflow-icon-box">
+              <i class="bi bi-box-seam-fill"></i>
+              <span class="workflow-step-badge">06</span>
+            </div>
+            <div class="workflow-step-title">Dispatch</div>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="workflow-step-node" onclick="switchWorkflowStep(7)" data-step-id="7">
+            <div class="workflow-icon-box">
+              <i class="bi bi-truck-front-fill"></i>
+              <span class="workflow-step-badge">07</span>
+            </div>
+            <div class="workflow-step-title">Delivery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Stage Explorer Panel -->
+      <div class="workflow-detail-card" id="workflowDetailCard">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+          <div class="flex items-center gap-4">
+            <div id="wfDetailIcon" class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl font-bold border border-amber-500/20">
+              <i class="bi bi-gear-wide-connected"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <span id="wfDetailStepNum" class="badge-gold text-xs">Step 04 of 07</span>
+                <span id="wfDetailSla" class="badge-emerald text-xs"><i class="bi bi-clock-history me-1"></i> Lead Time: 5-7 Days</span>
+              </div>
+              <h3 id="wfDetailTitle" class="text-2xl font-extrabold">Batch Production & Custom Branding</h3>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="btn-outline text-xs !py-2 !px-4" onclick="navigateWorkflow(-1)"><i class="bi bi-arrow-left me-1"></i> Prev Step</button>
+            <button class="btn-gold text-xs !py-2 !px-4" onclick="navigateWorkflow(1)">Next Step <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-xs">
+          <div class="space-y-2">
+            <div class="text-slate-400 font-bold uppercase tracking-wider">Automated Process:</div>
+            <p id="wfDetailDesc" class="text-slate-600 dark:text-slate-300 leading-relaxed">
+              Precision laser engraving, gold metallic foil stamping, and debossing applied across all order units in automated cleanroom facilities.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="text-slate-400 font-bold uppercase tracking-wider">Deliverable Milestone:</div>
+            <div id="wfDetailMilestone" class="font-bold text-slate-800 dark:text-white flex items-center gap-2">
+              <i class="bi bi-check-circle-fill text-emerald-500 me-2"></i> Branded Product Batch Completed & Staged
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <div class="text-slate-400 font-bold uppercase tracking-wider">Enterprise Audit Trail:</div>
+            <div id="wfDetailAudit" class="p-3 bg-slate-100 dark:bg-slate-800 rounded-xl font-mono text-[11px] text-amber-500">
+              <i class="bi bi-terminal me-1"></i> [LOG 04]: Production Line #3 Active • 500 Units Sealed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Product Showcase Story -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="showcase-story-card p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <img src="assets/images/executive_kit.jpg" alt="Executive Collection" class="w-full h-80 object-cover rounded-2xl shadow-lg">
+          </div>
+          <div class="lg:col-span-6">
+            <span class="badge-gold mb-2">Featured Showcase</span>
+            <h2 class="text-3xl font-extrabold mb-3">The Executive Suite Collection</h2>
+            <p class="text-xs text-slate-500 mb-6">Designed for enterprise onboarding, annual leadership summits, and VIP partner appreciation.</p>
+
+            <div class="grid grid-cols-2 gap-3 mb-6 text-xs">
+              <div class="spec-grid-item">
+                <div class="text-slate-400">Material:</div>
+                <div class="font-bold">Italian Leather & Anodized Aluminum</div>
+              </div>
+              <div class="spec-grid-item">
+                <div class="text-slate-400">Base MOQ:</div>
+                <div class="font-bold">100 Units</div>
+              </div>
+              <div class="spec-grid-item">
+                <div class="text-slate-400">Branding SLA:</div>
+                <div class="font-bold">10 - 12 Business Days</div>
+              </div>
+              <div class="spec-grid-item">
+                <div class="text-slate-400">Price Tier:</div>
+                <div class="font-bold text-amber-500">₹720 - ₹1,150 / unit</div>
+              </div>
+            </div>
+
+            <a href="order-builder.html" class="btn-gold text-xs">Configure This Collection</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Feature 2: Gift Intelligence Finder -->
+  <section class="section-padding bg-slate-100/70 dark:bg-slate-900/70">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5">
+          <span class="badge-gold mb-3"><i class="bi bi-magic"></i> AI-Powered Assistance</span>
+          <h2 class="section-title mb-4">Gift Intelligence Finder</h2>
+          <p class="text-slate-500 mb-6">Specify your budget, target recipient tier, and event occasion to dynamically view matching corporate gift configurations.</p>
+          
+          <!-- Filter Controls -->
+          <div class="space-y-5">
+            <div>
+              <label class="flex justify-between text-sm font-bold mb-2">
+                <span>Budget per Recipient:</span>
+                <span id="giftBudgetValue" class="text-amber-500 font-extrabold">₹2,500</span>
+              </label>
+              <input type="range" id="giftBudgetRange" min="500" max="5000" step="250" value="2500" class="w-full accent-amber-500">
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold mb-2">Target Audience:</label>
+              <div class="flex flex-wrap gap-2">
+                <button class="gift-audience-btn btn-gold active text-xs !py-1.5 !px-3" data-audience="Employees">Employees</button>
+                <button class="gift-audience-btn btn-outline text-xs !py-1.5 !px-3" data-audience="Clients">Clients</button>
+                <button class="gift-audience-btn btn-outline text-xs !py-1.5 !px-3" data-audience="Executives">Executives</button>
+                <button class="gift-audience-btn btn-outline text-xs !py-1.5 !px-3" data-audience="Partners">Partners</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Output Container -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6">
+            <h3 class="font-bold text-lg mb-4 flex items-center justify-between">
+              <span>Matching Recommended Gifts</span>
+              <span class="text-xs text-slate-400 font-normal">Updated Live</span>
+            </h3>
+            <div id="giftIntelligenceResults" class="space-y-3">
+              <!-- Dynamically populated by app.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Portal Dashboard Preview Inside Homepage -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Client Experience</span>
+        <h2 class="section-title">Enterprise Client Dashboard Preview</h2>
+        <p class="section-subtitle mx-auto">Track production status, view delivery metrics, download invoices and approve design proofs inside one portal.</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div class="kpi-card">
+            <div>
+              <div class="text-xs text-slate-400 font-bold uppercase">Active Orders</div>
+              <div class="kpi-value text-amber-500">12</div>
+              <div class="text-xs text-emerald-500 font-semibold"><i class="bi bi-arrow-up-right"></i> 3 in production</div>
+            </div>
+            <div class="kpi-icon-box bg-amber-500/10 text-amber-500"><i class="bi bi-box-seam"></i></div>
+          </div>
+          <div class="kpi-card">
+            <div>
+              <div class="text-xs text-slate-400 font-bold uppercase">Total Spend (YTD)</div>
+              <div class="kpi-value">₹48.2L</div>
+              <div class="text-xs text-slate-400">Across 5 departments</div>
+            </div>
+            <div class="kpi-icon-box bg-indigo-500/10 text-indigo-500"><i class="bi bi-currency-rupee"></i></div>
+          </div>
+          <div class="kpi-card">
+            <div>
+              <div class="text-xs text-slate-400 font-bold uppercase">Delivery On-Time</div>
+              <div class="kpi-value text-emerald-500">99.8%</div>
+              <div class="text-xs text-emerald-500 font-semibold"><i class="bi bi-shield-check"></i> SLA Compliant</div>
+            </div>
+            <div class="kpi-icon-box bg-emerald-500/10 text-emerald-500"><i class="bi bi-truck"></i></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold text-sm mb-3">Procurement Spending Trend</h4>
+            <div class="h-64">
+              <canvas id="monthlySpendChart"></canvas>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold text-sm mb-3">Orders by Gift Category</h4>
+            <div class="h-64">
+              <canvas id="categoryDistributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Testimonials -->
+  <section class="section-padding bg-slate-900 text-white">
+    <div class="container-custom">
+      <div class="testimonial-quote-box bg-slate-800/80 border-slate-700">
+        <span class="badge-gold mb-4">Client Case Study</span>
+        <blockquote class="testimonial-large-quote">
+          "From one 2,000-unit employee welcome kit to five-city delivery, the entire procurement process stayed inside one workflow with zero errors."
+        </blockquote>
+        <div class="flex items-center justify-between border-t border-slate-700 pt-6">
+          <div>
+            <div class="font-bold text-lg">Vikramaditya Sharma</div>
+            <div class="text-xs text-amber-400">Head of People & Experience, AXION Tech</div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-extrabold text-emerald-400">2,000 Units</div>
+            <div class="text-xs text-slate-400">5-City Simultaneous Dispatch</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="footer-main bg-slate-950 text-white pt-16 pb-8 border-t border-slate-800">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-1">
+          <a href="index.html" class="brand-logo text-white mb-4 block">
+            <img src="assets/images/favicon.svg" alt="Vanguard Gift" class="logo-img">
+            <span class="text-white">VANGUARD<span class="text-amber-500">.GIFT</span></span>
+          </a>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Enterprise corporate gifting & merchandise fulfillment platform across India.
+          </p>
+          <div class="footer-social-flex">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn social-instagram" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn social-facebook" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn social-linkedin" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn social-twitter" title="Twitter / X" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-amber-500 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-500 transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-amber-500 transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-amber-500 transition-colors">Pricing Tiers</a></li>
+            <li><a href="blog.html" class="hover:text-amber-500 transition-colors">Blog & Journal</a></li>
+            <li><a href="contact.html" class="hover:text-amber-500 transition-colors">Contact Sales</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Enterprise SLA</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><span class="text-amber-500 font-semibold">24h Express</span> Dispatch SLA</li>
+            <li><span class="text-emerald-500 font-semibold">100% Optical</span> QC Inspection</li>
+            <li><span class="text-indigo-500 font-semibold">Pantone PMS</span> Color Matching</li>
+            <li><span class="text-amber-500 font-semibold">5 Regional</span> Logistics Hubs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-slate-200 uppercase tracking-wider">Corporate Sales</h4>
+          <p class="text-xs text-slate-400 mb-2"><i class="bi bi-envelope me-1.5 text-amber-500"></i> corporate@vanguardgift.com</p>
+          <p class="text-xs text-slate-400 mb-4"><i class="bi bi-telephone me-1.5 text-amber-500"></i> +91 98765 43210</p>
+          <a href="contact.html" class="btn-gold text-xs w-full block text-center py-2.5">Connect Sales Team</a>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Vanguard Gift & Merchandise Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/order-builder.js"></script>
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>
+
+
