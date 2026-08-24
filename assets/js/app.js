@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductFilter();
   initMobileNav();
   initAuthSession();
+  initServiceDetails();
 });
 
 // Auth Session & Navbar Login/Logout State Management
@@ -407,3 +408,247 @@ window.navigateWorkflow = function(delta) {
   if (newStep > 7) newStep = 1;
   window.switchWorkflowStep(newStep);
 };
+
+// Enterprise Service Offerings Data Store
+window.servicesData = {
+  'onboarding': {
+    id: 'onboarding',
+    title: 'Employee Onboarding Kit Fulfillment',
+    category: 'ONBOARDING KITS',
+    tag: '24H DISPATCH',
+    img: 'assets/images/corporate_apparel.jpg',
+    desc: 'We streamline your HR onboarding workflow by curating premium gifts, applying exact vector logo branding, packaging in custom magnetic closure boxes, and shipping directly to new hires prior to day one.',
+    deliverables: [
+      'Custom embroidered high-density cotton hoodies & branded apparel',
+      'Insulated double-wall stainless steel thermal flasks with laser logo',
+      'Embossed hardbound journal with matching metallic stylus pen',
+      'Premium padded canvas tech organizer pouch',
+      'Personalized welcome letter printed on 300gsm textured cardstock'
+    ],
+    slas: [
+      '2-3 Business Days Production SLA',
+      'Quality Inspection Checkpoints on 100% of Units',
+      'Real-time GPS tracking link emailed to HR manager & recipient'
+    ],
+    specs: {
+      moq: '25 Units',
+      packaging: 'Magnetic Rigid Gift Box',
+      leadTime: '2-3 Business Days',
+      price: '₹1,500 - ₹3,500 / kit'
+    }
+  },
+  'branding': {
+    id: 'branding',
+    title: 'Precision Surface Branding & Engraving',
+    category: 'BRANDING LAB',
+    tag: '300DPI UV & FOIL',
+    img: 'assets/images/leather_notebook.jpg',
+    desc: 'Industrial-grade surface customization utilizing fiber laser etching, metallic hot foil debossing, 300DPI cylindrical UV printing, and precision silk-screen logo application across metal, leather, glass, and wood substrates.',
+    deliverables: [
+      'High-precision Fiber & CO2 Laser Engraving for metal & wood items',
+      'Metallic Gold, Silver & Blind Hot Foil Stamping for leather journals',
+      '300 DPI Cylindrical UV Printing for tumblers, flasks & drinkware',
+      'Pantone PMS Exact Color Match Screen Printing on textiles & bags',
+      'Instant 3D Digital Vector Mockup & Automated Proof Signoff'
+    ],
+    slas: [
+      '15-Minute Digital Vector Proof SLA',
+      'Pantone PMS Color Accuracy Guarantee (ΔE < 1.0)',
+      'Scratch-resistant & UV-cured surface durability testing'
+    ],
+    specs: {
+      moq: '50 Units',
+      packaging: 'Substrate Bulk / Custom Box',
+      leadTime: '15-Min Proof / 3-5 Days',
+      price: 'Custom Quote / Unit'
+    }
+  },
+  'eco': {
+    id: 'eco',
+    title: 'Eco-Friendly Sustainable Hampers',
+    category: 'ECO SUSTAINABLE',
+    tag: '100% FSC CERTIFIED',
+    img: 'assets/images/eco_hampers.jpg',
+    desc: 'Certified zero-waste, plastic-free eco gifting solutions crafted from FSC-certified cork, organic bamboo, recycled cotton, and plantable seed paper to reinforce your enterprise ESG commitments.',
+    deliverables: [
+      'Organic bamboo double-wall thermal flask & stainless steel tea infuser',
+      'Recycled cork bound daily planner & eco-bamboo pen set',
+      'Handcrafted organic herbal tea assortment in reusable tin',
+      'Plantable seed paper greeting card (wildflower/basil seeds embedded)',
+      'Unbleached jute tote bag printed with eco water-based ink'
+    ],
+    slas: [
+      '100% Plastic-Free & FSC Certified Eco Packaging',
+      'Carbon-neutral shipping options available across Pan-India',
+      'Comprehensive ESG Compliance documentation provided for reporting'
+    ],
+    specs: {
+      moq: '30 Units',
+      packaging: 'Recycled Kraft Box & Tissue',
+      leadTime: '3-5 Business Days',
+      price: '₹1,200 - ₹2,800 / hamper'
+    }
+  },
+  'executive': {
+    id: 'executive',
+    title: 'Executive & Leadership VIP Hampers',
+    category: 'EXECUTIVE VIP',
+    tag: 'LUXURY SUITE',
+    img: 'assets/images/executive_kit.jpg',
+    desc: 'Bespoke luxury hampers engineered for C-suite executives, board members, key client appreciation, and high-value milestone celebrations, packaged in handcrafted rigid presentation boxes.',
+    deliverables: [
+      'Premium top-grain Italian leather organizer portfolio with debossed logo',
+      'Swiss-engineered precision ballpoint pen with custom monogram engraving',
+      'ANC wireless headphones with genuine leather ear cushions in custom case',
+      'Artisanal single-origin gourmet chocolate & roasted coffee selection',
+      'Hand-signed wax-sealed personalized appreciation card'
+    ],
+    slas: [
+      'White-glove personal concierge account handling',
+      '12-Point optical QC inspection on 100% of executive units',
+      'Priority hand-delivery by dedicated courier service'
+    ],
+    specs: {
+      moq: '10 Units',
+      packaging: 'Velvet-Lined Rigid Box',
+      leadTime: '4-6 Business Days',
+      price: '₹5,000 - ₹15,000 / suite'
+    }
+  },
+  'tech': {
+    id: 'tech',
+    title: 'Tech Accessories & Electronics Merchandise',
+    category: 'TECH HARDWARE',
+    tag: 'BIS CERTIFIED',
+    img: 'assets/images/tech_accessories.jpg',
+    desc: 'Cutting-edge branded technology merchandise including MagSafe power banks, multi-device fast wireless chargers, active noise-canceling earbuds, and desk productivity gadgets with full safety certifications.',
+    deliverables: [
+      '10,000mAh MagSafe magnetic wireless power bank with laser logo',
+      '3-in-1 foldable wireless charging station for phone, watch & pods',
+      'Active Noise Canceling (ANC) Bluetooth 5.3 earbuds',
+      'Braided 100W USB-C multi-cable with illuminated LED logo badge',
+      'Smart desktop digital clock & wireless charging mousepad'
+    ],
+    slas: [
+      '1-Year Instant Replacement Warranty on all electronic units',
+      'BIS, CE & FCC Certified hardware safety compliance',
+      'Laser-engraved brand logo guaranteed against wear & tear'
+    ],
+    specs: {
+      moq: '25 Units',
+      packaging: 'Matte Black Tech Sleeve Box',
+      leadTime: '2-4 Business Days',
+      price: '₹1,800 - ₹4,500 / unit'
+    }
+  },
+  'logistics': {
+    id: 'logistics',
+    title: 'Multi-City Warehousing & Desk Drop Logistics',
+    category: 'DESK DROP SLA',
+    tag: '5 REGIONAL HUBS',
+    img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop',
+    desc: 'End-to-end corporate gifting supply chain infrastructure featuring 5 climate-controlled regional distribution hubs, real-time GPS shipment telemetry, and synchronized desk-drop deliveries for remote & hybrid teams.',
+    deliverables: [
+      'Synchronized multi-city delivery execution on scheduled date',
+      'Climate-controlled inventory warehousing & stock management',
+      'Automated address collection & verification portal for HR',
+      'Live GPS tracking dashboard with SMS & email alerts',
+      'Automated GST invoice breakdown per department/location'
+    ],
+    slas: [
+      '99.4% On-Time Delivery SLA across 500+ Indian cities',
+      'Zero-damage packaging guarantee with bubble-vault protection',
+      'Real-time proof of delivery with digital signature capture'
+    ],
+    specs: {
+      moq: '50 Hub Units',
+      packaging: 'Reinforced Transport Cartons',
+      leadTime: '24-48 Hours Express SLA',
+      price: 'Volume Freight Matrix'
+    }
+  }
+};
+
+// Dynamic Service Details Loader
+function initServiceDetails() {
+  const serviceTitle = document.getElementById('serviceTitle');
+  if (!serviceTitle) return; // Not on service-details.html
+
+  const params = new URLSearchParams(window.location.search);
+  const serviceId = params.get('id') || params.get('service') || 'onboarding';
+  const service = window.servicesData[serviceId] || window.servicesData['onboarding'];
+
+  // Document Title Update
+  document.title = `${service.title} | Vanguard Gift`;
+
+  // Category & Tag Badges
+  const categoryBadge = document.getElementById('serviceCategoryBadge');
+  if (categoryBadge) categoryBadge.textContent = service.category;
+
+  const tagBadge = document.getElementById('serviceTagBadge');
+  if (tagBadge) tagBadge.textContent = service.tag;
+
+  // Title
+  serviceTitle.textContent = service.title;
+
+  // Hero Image
+  const heroImg = document.getElementById('serviceHeroImg');
+  if (heroImg) {
+    heroImg.src = service.img;
+    heroImg.alt = service.title;
+  }
+
+  // Description
+  const desc = document.getElementById('serviceDesc');
+  if (desc) desc.textContent = service.desc;
+
+  // Deliverables List
+  const deliverablesEl = document.getElementById('serviceDeliverables');
+  if (deliverablesEl && service.deliverables) {
+    deliverablesEl.innerHTML = service.deliverables.map(item => `
+      <li class="flex items-start gap-2.5">
+        <i class="bi bi-check2-circle text-amber-500 text-base mt-0.5 flex-shrink-0"></i>
+        <span>${item}</span>
+      </li>
+    `).join('');
+  }
+
+  // SLAs List
+  const slasEl = document.getElementById('serviceSlas');
+  if (slasEl && service.slas) {
+    slasEl.innerHTML = service.slas.map(item => `
+      <li class="flex items-start gap-2.5">
+        <i class="bi bi-shield-check text-emerald-500 text-base mt-0.5 flex-shrink-0"></i>
+        <span>${item}</span>
+      </li>
+    `).join('');
+  }
+
+  // Procurement Specifications Grid
+  const specsEl = document.getElementById('serviceSpecs');
+  if (specsEl && service.specs) {
+    specsEl.innerHTML = `
+      <div class="bg-slate-100 dark:bg-slate-800/60 p-3 rounded-xl">
+        <div class="text-slate-400 font-medium text-[11px]">Min. Order (MOQ)</div>
+        <div class="font-bold text-slate-800 dark:text-slate-200 mt-1">${service.specs.moq}</div>
+      </div>
+      <div class="bg-slate-100 dark:bg-slate-800/60 p-3 rounded-xl">
+        <div class="text-slate-400 font-medium text-[11px]">Packaging Type</div>
+        <div class="font-bold text-slate-800 dark:text-slate-200 mt-1">${service.specs.packaging}</div>
+      </div>
+      <div class="bg-slate-100 dark:bg-slate-800/60 p-3 rounded-xl">
+        <div class="text-slate-400 font-medium text-[11px]">Lead Time SLA</div>
+        <div class="font-bold text-slate-800 dark:text-slate-200 mt-1">${service.specs.leadTime}</div>
+      </div>
+      <div class="bg-slate-100 dark:bg-slate-800/60 p-3 rounded-xl">
+        <div class="text-slate-400 font-medium text-[11px]">Pricing Guide</div>
+        <div class="font-bold text-amber-500 mt-1">${service.specs.price}</div>
+      </div>
+    `;
+  }
+
+  // Quote Form Service Input
+  const nameInput = document.getElementById('quoteServiceNameInput');
+  if (nameInput) nameInput.value = service.title;
+}
+
