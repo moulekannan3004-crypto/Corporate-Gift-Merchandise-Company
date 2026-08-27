@@ -65,7 +65,7 @@
       <!-- Nav Actions & Controls -->
       <div class="nav-actions">
         <!-- LTR to RTL Layout Arrow Toggle Button -->
-        <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)">
+        <button class="rtl-toggle-btn control-btn !w-auto px-3 py-1.5 text-xs font-bold hidden sm:flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)">
           <span class="text-amber-500 font-extrabold">LTR</span>
           <i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i>
           <span class="opacity-60 text-slate-400">RTL</span>
@@ -77,32 +77,50 @@
         </button>
 
         <!-- Client Portal Login Button -->
-        <a href="login.html" class="btn-outline text-xs !py-2 !px-3.5 font-bold flex items-center gap-1.5" title="Client Portal Login">
+        <a href="login.html" class="btn-outline text-xs !py-2 !px-3.5 font-bold hidden sm:flex items-center gap-1.5" title="Client Portal Login">
           <i class="bi bi-box-arrow-in-right text-amber-500 font-bold"></i> Login
         </a>
 
         <!-- Mobile Drawer Toggle -->
-        <button id="mobileNavToggleBtn" class="control-btn mobile-nav-toggle lg:hidden" title="Menu">
+        <button id="mobileNavToggleBtn" class="control-btn mobile-nav-toggle lg:hidden" title="Menu" aria-expanded="false">
           <i class="bi bi-list"></i>
         </button>
 
         <!-- CTA Button -->
-        <a href="contact.html" class="btn-gold hidden sm:inline-flex">
+        <a href="contact.html" class="btn-gold hidden lg:inline-flex">
           <i class="bi bi-send me-1"></i> Get Proposal
         </a>
       </div>
     </div>
 
     <!-- Responsive Mobile Drawer -->
-    <div id="mobileNavDrawer" class="mobile-nav-drawer">
-      <a href="index.html" class="mobile-nav-link active">Home 01 <i class="bi bi-house-door"></i></a>
-      <a href="home-digital-agency.html" class="mobile-nav-link">Home 02 (Agency & SaaS) <i class="bi bi-brush"></i></a>
-      <a href="about.html" class="mobile-nav-link">About Us <i class="bi bi-info-circle"></i></a>
-      <a href="services.html" class="mobile-nav-link">Services <i class="bi bi-grid"></i></a>
-      <a href="pricing.html" class="mobile-nav-link">Pricing <i class="bi bi-tag"></i></a>
-      <a href="blog.html" class="mobile-nav-link">Blog <i class="bi bi-newspaper"></i></a>
-      <a href="contact.html" class="mobile-nav-link">Contact <i class="bi bi-envelope"></i></a>
-      <a href="admin/index.html" class="mobile-nav-link text-indigo-600 font-bold">Admin Dashboard <i class="bi bi-shield-lock"></i></a>
+    <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <div class="flex flex-col gap-1.5">
+        <a href="index.html" class="mobile-nav-link active"><span>Home 01</span> <i class="bi bi-house-door"></i></a>
+        <a href="home-digital-agency.html" class="mobile-nav-link"><span>Home 02 (Agency & SaaS)</span> <i class="bi bi-brush"></i></a>
+        <a href="about.html" class="mobile-nav-link"><span>About Us</span> <i class="bi bi-info-circle"></i></a>
+        <a href="services.html" class="mobile-nav-link"><span>Services</span> <i class="bi bi-grid"></i></a>
+        <a href="pricing.html" class="mobile-nav-link"><span>Pricing</span> <i class="bi bi-tag"></i></a>
+        <a href="blog.html" class="mobile-nav-link"><span>Blog</span> <i class="bi bi-newspaper"></i></a>
+        <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <i class="bi bi-envelope"></i></a>
+        <a href="admin/index.html" class="mobile-nav-link text-indigo-600 dark:text-indigo-400 font-bold"><span>Admin Dashboard</span> <i class="bi bi-shield-lock"></i></a>
+      </div>
+      
+      <div class="mobile-drawer-actions">
+        <a href="contact.html" class="btn-gold w-full text-center justify-center py-3">
+          <i class="bi bi-send me-1"></i> Get Proposal
+        </a>
+        <div class="grid grid-cols-2 gap-2">
+          <a href="login.html" class="btn-outline text-xs !py-2.5 justify-center font-bold flex items-center gap-1.5" title="Client Portal Login">
+            <i class="bi bi-box-arrow-in-right text-amber-500 font-bold"></i> Login
+          </a>
+          <button class="rtl-toggle-btn control-btn !w-full px-3 py-2 text-xs font-bold flex items-center justify-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-800 dark:text-white transition-all shadow-sm" title="Toggle Layout Direction (LTR / RTL)">
+            <span class="text-amber-500 font-extrabold">LTR</span>
+            <i class="bi bi-arrow-left-right text-amber-500 font-extrabold"></i>
+            <span class="opacity-60 text-slate-400">RTL</span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -131,18 +149,18 @@
           </div>
 
           <!-- Trust metrics bar -->
-          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200 dark:border-slate-800">
-            <div>
-              <div class="text-2xl font-bold text-amber-500 counter-val" data-target="250000">0</div>
-              <div class="text-xs text-slate-500 font-medium">Gifts Delivered</div>
+          <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <div class="min-w-0">
+              <div class="text-lg sm:text-2xl font-extrabold text-amber-500 counter-val" data-target="250000" data-suffix="+">250K+</div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Gifts Delivered</div>
             </div>
-            <div>
-              <div class="text-2xl font-bold counter-val" data-target="480">0</div>
-              <div class="text-xs text-slate-500 font-medium">Enterprise Clients</div>
+            <div class="min-w-0">
+              <div class="text-lg sm:text-2xl font-extrabold counter-val" data-target="480" data-suffix="+">480+</div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Enterprise Clients</div>
             </div>
-            <div>
-              <div class="text-2xl font-bold text-emerald-500">99.4%</div>
-              <div class="text-xs text-slate-500 font-medium">SLA On-Time</div>
+            <div class="min-w-0">
+              <div class="text-lg sm:text-2xl font-extrabold text-emerald-500">99.4%</div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-medium">SLA On-Time</div>
             </div>
           </div>
         </div>
@@ -352,12 +370,12 @@
             <div>
               <!-- Step 1 Content: Choose Gift Category -->
               <div class="builder-step-content" data-step-content="1">
-                <div class="flex items-center justify-between mb-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-4">
                   <div>
                     <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Choose Gift Category</h3>
                     <p class="text-xs text-slate-500 mt-0.5">Select a curated procurement tier to unlock custom product options.</p>
                   </div>
-                  <span class="badge-gold text-[11px]"><i class="bi bi-stars"></i> 6 Categories Available</span>
+                  <span class="badge-gold text-[11px] self-start sm:self-auto"><i class="bi bi-stars"></i> 6 Categories Available</span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
@@ -374,7 +392,7 @@
                       <div class="font-extrabold text-sm text-slate-900 dark:text-white">Executive Kits</div>
                       <div class="text-xs text-slate-500 mt-1 leading-snug">VIP Onboarding & Leadership welcome gift boxes</div>
                     </div>
-                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-1.5 text-[11px]">
                       <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹1,150</strong>/unit</span>
                       <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 10 Days SLA</span>
                     </div>
@@ -393,7 +411,7 @@
                       <div class="font-extrabold text-sm text-slate-900 dark:text-white">Tech Accessories</div>
                       <div class="text-xs text-slate-500 mt-1 leading-snug">Headphones, MagSafe chargers & audio gear</div>
                     </div>
-                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-1.5 text-[11px]">
                       <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹1,450</strong>/unit</span>
                       <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 7 Days SLA</span>
                     </div>
@@ -404,15 +422,15 @@
                     <div>
                       <div class="flex items-center gap-2 mb-2.5">
                         <div class="card-icon-badge bg-emerald-500/10 text-emerald-500">
-                          <i class="bi bi-leaf-fill"></i>
+                          <i class="bi bi-tree-fill"></i>
                         </div>
-                        <span class="badge-emerald text-[9px] font-bold">SUSTAINABLE</span>
+                        <span class="badge-emerald text-[9px] font-bold"><i class="bi bi-recycle me-1"></i>SUSTAINABLE</span>
                       </div>
                       <img src="assets/images/eco_hampers.jpg" alt="Eco-Friendly Hampers" class="builder-category-thumb">
                       <div class="font-extrabold text-sm text-slate-900 dark:text-white">Eco-Friendly Hampers</div>
                       <div class="text-xs text-slate-500 mt-1 leading-snug">Bamboo flasks, cork journals & organic tea</div>
                     </div>
-                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-1.5 text-[11px]">
                       <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹980</strong>/unit</span>
                       <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 8 Days SLA</span>
                     </div>
@@ -431,7 +449,7 @@
                       <div class="font-extrabold text-sm text-slate-900 dark:text-white">Italian Leather</div>
                       <div class="text-xs text-slate-500 mt-1 leading-snug">Foil embossed journals & rollerball pens</div>
                     </div>
-                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-1.5 text-[11px]">
                       <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹650</strong>/unit</span>
                       <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 5 Days SLA</span>
                     </div>
@@ -450,7 +468,7 @@
                       <div class="font-extrabold text-sm text-slate-900 dark:text-white">Corporate Apparel</div>
                       <div class="text-xs text-slate-500 mt-1 leading-snug">Embroidered polo shirts & fleece jackets</div>
                     </div>
-                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-1.5 text-[11px]">
                       <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹850</strong>/unit</span>
                       <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 12 Days SLA</span>
                     </div>
@@ -469,7 +487,7 @@
                       <div class="font-extrabold text-sm text-slate-900 dark:text-white">Gourmet & Wellness</div>
                       <div class="text-xs text-slate-500 mt-1 leading-snug">Artisanal chocolates, tea sets & wellness gifts</div>
                     </div>
-                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px]">
+                    <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-between items-center gap-1.5 text-[11px]">
                       <span class="text-slate-400">From <strong class="text-amber-500 text-xs">₹1,200</strong>/unit</span>
                       <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full"><i class="bi bi-lightning-charge-fill"></i> 6 Days SLA</span>
                     </div>

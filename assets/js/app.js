@@ -58,21 +58,61 @@ function initAuthSession() {
   }
 }
 
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle & Drawer Handler
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobileNavToggleBtn');
   const drawer = document.getElementById('mobileNavDrawer');
   if (!toggleBtn || !drawer) return;
 
-  toggleBtn.addEventListener('click', () => {
-    drawer.classList.toggle('active');
+  // Create or retrieve backdrop overlay
+  let backdrop = document.getElementById('mobileNavBackdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'mobileNavBackdrop';
+    backdrop.className = 'mobile-nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function openDrawer() {
+    drawer.classList.add('active');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
     const icon = toggleBtn.querySelector('i');
-    if (icon) {
-      if (drawer.classList.contains('active')) {
-        icon.className = 'bi bi-x-lg';
-      } else {
-        icon.className = 'bi bi-list';
-      }
+    if (icon) icon.className = 'bi bi-x-lg';
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    const icon = toggleBtn.querySelector('i');
+    if (icon) icon.className = 'bi bi-list';
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawer.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  backdrop.addEventListener('click', closeDrawer);
+
+  // Close when clicking any link or action button inside mobile drawer
+  drawer.addEventListener('click', (e) => {
+    if (e.target.closest('a') || e.target.closest('.mobile-drawer-close')) {
+      closeDrawer();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
     }
   });
 }
@@ -216,24 +256,34 @@ function initCounterAnimations() {
       if (entry.isIntersecting) {
         const el = entry.target;
         const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const useK = target >= 100000;
         let current = 0;
         const step = Math.ceil(target / 40);
 
         const timer = setInterval(() => {
           current += step;
           if (current >= target) {
-            el.textContent = target.toLocaleString();
+            if (useK) {
+              el.textContent = Math.floor(target / 1000) + 'K' + suffix;
+            } else {
+              el.textContent = target.toLocaleString() + suffix;
+            }
             clearInterval(timer);
           } else {
-            el.textContent = current.toLocaleString();
+            if (useK) {
+              el.textContent = Math.floor(current / 1000) + 'K' + suffix;
+            } else {
+              el.textContent = current.toLocaleString() + suffix;
+            }
           }
         }, 30);
         observer.unobserve(el);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
-  counters.forEach(c => observer.observe(c));
+  counters.forEach(counter => observer.observe(counter));
 }
 
 // Global Modal Dialog Controls

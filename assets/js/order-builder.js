@@ -67,7 +67,10 @@
 
     stepBtns.forEach((b, idx) => {
       b.classList.remove('active');
-      if (idx + 1 === currentStep) b.classList.add('active');
+      if (idx + 1 === currentStep) {
+        b.classList.add('active');
+        b.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
       if (idx + 1 < currentStep) b.classList.add('completed');
     });
 
