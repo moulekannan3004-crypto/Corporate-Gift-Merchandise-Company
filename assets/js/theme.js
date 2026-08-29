@@ -9,6 +9,7 @@
   // Initialize theme from localStorage or system preference
   const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', savedTheme);
+  document.documentElement.classList.toggle('dark', savedTheme === 'dark');
 
   // Initialize text direction (RTL/LTR)
   const savedDir = localStorage.getItem('dir') || 'ltr';
@@ -29,6 +30,7 @@
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
         document.documentElement.setAttribute('data-theme', newTheme);
+        document.documentElement.classList.toggle('dark', newTheme === 'dark');
         localStorage.setItem('theme', newTheme);
         updateThemeIcons(newTheme);
 
@@ -100,6 +102,7 @@
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
     localStorage.setItem('theme', newTheme);
     updateThemeIcons(newTheme);
     window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));

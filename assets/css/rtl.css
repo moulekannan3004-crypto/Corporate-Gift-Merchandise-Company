@@ -13,17 +13,18 @@
 [dir="rtl"] .brand-logo {
   flex-direction: row-reverse !important;
   margin-right: 0 !important;
-  margin-left: 1.5rem !important;
+  margin-left: 0.5rem !important;
 }
 
 [dir="rtl"] .brand-logo .logo-icon {
-  margin-left: 0.75rem !important;
+  margin-left: 0.5rem !important;
   margin-right: 0 !important;
 }
 
 /* Navbar & Dropdown RTL Alignment */
 [dir="rtl"] .navbar-content {
   flex-direction: row;
+  justify-content: space-between !important;
 }
 
 [dir="rtl"] .nav-links {
@@ -32,7 +33,7 @@
 
 [dir="rtl"] .nav-actions {
   margin-left: 0 !important;
-  margin-right: auto !important;
+  margin-right: 0 !important;
 }
 
 [dir="rtl"] .nav-link::after {

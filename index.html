@@ -11,6 +11,11 @@
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+    }
+  </script>
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Chart.js CDN -->
@@ -938,7 +943,7 @@
 
       <div class="category-asymmetric-grid">
         <!-- Card 1: Executive Kits -->
-        <div class="category-card col-span-8" style="background-image: url('assets/images/executive_kit.jpg');">
+        <div class="category-card col-span-12 md:col-span-8" style="background-image: url('assets/images/executive_kit.jpg');">
           <div class="card-content">
             <span class="badge-gold mb-2">Bestseller • Category 01</span>
             <h3 class="text-2xl font-bold mb-1">Executive Onboarding Kits</h3>
@@ -948,7 +953,7 @@
         </div>
 
         <!-- Card 2: Italian Leather -->
-        <div class="category-card col-span-4" style="background-image: url('assets/images/leather_notebook.jpg');">
+        <div class="category-card col-span-12 md:col-span-4" style="background-image: url('assets/images/leather_notebook.jpg');">
           <div class="card-content">
             <span class="badge-emerald mb-2">Category 02</span>
             <h3 class="text-xl font-bold mb-1">Italian Leather Stationery</h3>
@@ -957,7 +962,7 @@
         </div>
 
         <!-- Card 3: Tech Accessories -->
-        <div class="category-card col-span-4" style="background-image: url('assets/images/tech_accessories.jpg');">
+        <div class="category-card col-span-12 md:col-span-4" style="background-image: url('assets/images/tech_accessories.jpg');">
           <div class="card-content">
             <span class="badge-indigo mb-2">Category 03</span>
             <h3 class="text-xl font-bold mb-1">Tech Accessories & Audio</h3>
@@ -966,7 +971,7 @@
         </div>
 
         <!-- Card 4: Eco Hampers -->
-        <div class="category-card col-span-4" style="background-image: url('assets/images/eco_hampers.jpg');">
+        <div class="category-card col-span-12 md:col-span-4" style="background-image: url('assets/images/eco_hampers.jpg');">
           <div class="card-content">
             <span class="badge-emerald mb-2">Sustainable • Category 04</span>
             <h3 class="text-xl font-bold mb-1">Eco-Friendly Hampers</h3>
@@ -975,7 +980,7 @@
         </div>
 
         <!-- Card 5: Apparel & Apparel -->
-        <div class="category-card col-span-4" style="background-image: url('assets/images/corporate_apparel.jpg');">
+        <div class="category-card col-span-12 md:col-span-4" style="background-image: url('assets/images/corporate_apparel.jpg');">
           <div class="card-content">
             <span class="badge-gold mb-2">Category 05</span>
             <h3 class="text-xl font-bold mb-1">Custom Corporate Apparel</h3>
