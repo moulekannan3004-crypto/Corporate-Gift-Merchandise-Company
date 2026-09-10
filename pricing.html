@@ -354,55 +354,62 @@
         <p class="text-slate-500 text-xs sm:text-sm">Compare technical capabilities, SLA guarantees, and support options across plans.</p>
       </div>
 
+      <!-- Mobile Scroll Indicator -->
+      <div class="sm:hidden text-right text-[11px] text-slate-400 mb-2.5 flex items-center justify-end gap-1.5 font-medium">
+        <i class="bi bi-arrows-left-right text-amber-500"></i> Swipe to see full comparison matrix
+      </div>
+
       <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-        <table class="w-full text-left text-xs sm:text-sm">
-          <thead class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white uppercase font-extrabold text-[11px]">
-            <tr>
-              <th class="p-4 sm:p-5">Platform Feature</th>
-              <th class="p-4 sm:p-5 text-slate-600 dark:text-slate-300">Starter</th>
-              <th class="p-4 sm:p-5 text-amber-500 bg-amber-500/10">Business</th>
-              <th class="p-4 sm:p-5 text-indigo-500">Enterprise</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
-            <tr>
-              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Quarterly Unit Allocation</td>
-              <td class="p-4 sm:p-5">250 Units</td>
-              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">1,000 Units</td>
-              <td class="p-4 sm:p-5 font-bold text-indigo-500">Unlimited</td>
-            </tr>
-            <tr>
-              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Branding Lab Technologies</td>
-              <td class="p-4 sm:p-5">Laser Engraving</td>
-              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">Laser + 300DPI UV + Hot Foil</td>
-              <td class="p-4 sm:p-5 font-bold text-indigo-500">All Techniques + Custom Dies</td>
-            </tr>
-            <tr>
-              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">3D Vector Proof SLA</td>
-              <td class="p-4 sm:p-5">2 Hours</td>
-              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">15 Minutes</td>
-              <td class="p-4 sm:p-5 font-bold text-indigo-500">Instant Automated Proofing</td>
-            </tr>
-            <tr>
-              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Free Warehouse Inventory Holding</td>
-              <td class="p-4 sm:p-5">30 Days</td>
-              <td class="p-4 sm:p-5 font-bold text-amber-500 bg-amber-500/5">90 Days</td>
-              <td class="p-4 sm:p-5 font-bold text-indigo-500">Unlimited 365 Days</td>
-            </tr>
-            <tr>
-              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">HRMS API Integration (Workday/BambooHR)</td>
-              <td class="p-4 sm:p-5 text-slate-400">—</td>
-              <td class="p-4 sm:p-5 text-slate-400">—</td>
-              <td class="p-4 sm:p-5 font-bold text-emerald-500"><i class="bi bi-check-circle-fill me-1"></i> Full Webhook & REST API</td>
-            </tr>
-            <tr>
-              <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">Dedicated Account Manager</td>
-              <td class="p-4 sm:p-5 text-slate-400">—</td>
-              <td class="p-4 sm:p-5 font-bold text-emerald-500 bg-amber-500/5"><i class="bi bi-check-circle-fill me-1"></i> Senior Account Lead</td>
-              <td class="p-4 sm:p-5 font-bold text-emerald-500"><i class="bi bi-check-circle-fill me-1"></i> 24/7 Dedicated Exec Team</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left text-xs sm:text-sm min-w-[640px]">
+            <thead class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white uppercase font-extrabold text-[11px]">
+              <tr>
+                <th class="p-3.5 sm:p-5 min-w-[200px] w-2/5">Platform Feature</th>
+                <th class="p-3.5 sm:p-5 text-slate-600 dark:text-slate-300 min-w-[120px] w-1/5">Starter</th>
+                <th class="p-3.5 sm:p-5 text-amber-500 bg-amber-500/10 min-w-[160px] w-1/5">Business</th>
+                <th class="p-3.5 sm:p-5 text-indigo-500 min-w-[160px] w-1/5">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              <tr>
+                <td class="p-3.5 sm:p-5 font-bold text-slate-900 dark:text-white align-middle">Quarterly Unit Allocation</td>
+                <td class="p-3.5 sm:p-5 align-middle">250 Units</td>
+                <td class="p-3.5 sm:p-5 font-bold text-amber-500 bg-amber-500/5 align-middle">1,000 Units</td>
+                <td class="p-3.5 sm:p-5 font-bold text-indigo-500 align-middle">Unlimited</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 sm:p-5 font-bold text-slate-900 dark:text-white align-middle">Branding Lab Technologies</td>
+                <td class="p-3.5 sm:p-5 align-middle">Laser Engraving</td>
+                <td class="p-3.5 sm:p-5 font-bold text-amber-500 bg-amber-500/5 align-middle">Laser + 300DPI UV + Hot Foil</td>
+                <td class="p-3.5 sm:p-5 font-bold text-indigo-500 align-middle">All Techniques + Custom Dies</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 sm:p-5 font-bold text-slate-900 dark:text-white align-middle">3D Vector Proof SLA</td>
+                <td class="p-3.5 sm:p-5 align-middle">2 Hours</td>
+                <td class="p-3.5 sm:p-5 font-bold text-amber-500 bg-amber-500/5 align-middle">15 Minutes</td>
+                <td class="p-3.5 sm:p-5 font-bold text-indigo-500 align-middle">Instant Automated Proofing</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 sm:p-5 font-bold text-slate-900 dark:text-white align-middle">Free Warehouse Inventory Holding</td>
+                <td class="p-3.5 sm:p-5 align-middle">30 Days</td>
+                <td class="p-3.5 sm:p-5 font-bold text-amber-500 bg-amber-500/5 align-middle">90 Days</td>
+                <td class="p-3.5 sm:p-5 font-bold text-indigo-500 align-middle">Unlimited 365 Days</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 sm:p-5 font-bold text-slate-900 dark:text-white align-middle">HRMS API Integration (Workday/BambooHR)</td>
+                <td class="p-3.5 sm:p-5 text-slate-400 align-middle">—</td>
+                <td class="p-3.5 sm:p-5 text-slate-400 align-middle">—</td>
+                <td class="p-3.5 sm:p-5 font-bold text-emerald-500 align-middle"><span class="inline-flex items-center gap-1.5"><i class="bi bi-check-circle-fill shrink-0"></i> <span>Full Webhook & REST API</span></span></td>
+              </tr>
+              <tr>
+                <td class="p-3.5 sm:p-5 font-bold text-slate-900 dark:text-white align-middle">Dedicated Account Manager</td>
+                <td class="p-3.5 sm:p-5 text-slate-400 align-middle">—</td>
+                <td class="p-3.5 sm:p-5 font-bold text-emerald-500 bg-amber-500/5 align-middle"><span class="inline-flex items-center gap-1.5"><i class="bi bi-check-circle-fill shrink-0"></i> <span>Senior Account Lead</span></span></td>
+                <td class="p-3.5 sm:p-5 font-bold text-emerald-500 align-middle"><span class="inline-flex items-center gap-1.5"><i class="bi bi-check-circle-fill shrink-0"></i> <span>24/7 Dedicated Exec Team</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>

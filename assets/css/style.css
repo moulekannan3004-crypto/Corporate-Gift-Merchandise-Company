@@ -539,6 +539,48 @@ img {
   flex-shrink: 0;
 }
 
+/* Responsive Nav Alignment for 1024px - 1279px Mid-Desktop Viewports */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .navbar-content {
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.15rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .nav-actions .btn-gold {
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .nav-actions .btn-outline {
+    padding: 0.45rem 0.65rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .brand-logo {
+    font-size: 1.15rem;
+    gap: 0.5rem;
+  }
+
+  .brand-logo .logo-img,
+  .brand-logo .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /* Mobile Navigation Drawer & Toggle */
 .mobile-nav-toggle {
   display: none !important;

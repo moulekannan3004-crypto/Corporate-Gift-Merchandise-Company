@@ -88,6 +88,13 @@
   margin-right: 280px;
 }
 
+/* Reset global storefront navbar top padding on admin dashboard pages for mobile & tablet */
+@media (max-width: 1023px) {
+  body {
+    padding-top: 0 !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .dashboard-sidebar {
     transform: translateX(-100%);
@@ -104,19 +111,43 @@
   }
 }
 
+/* Sidebar Backdrop Overlay */
+.dashboard-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 35;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.dashboard-sidebar-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Dashboard Top Navigation Bar */
 .dashboard-topbar {
-  height: 75px;
+  height: 70px;
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 30;
+}
+
+@media (min-width: 640px) {
+  .dashboard-topbar {
+    height: 75px;
+    padding: 0 2rem;
+  }
 }
 
 .dashboard-search {
