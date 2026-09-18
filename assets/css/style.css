@@ -187,6 +187,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.text-white,
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+.bg-slate-900 h1, .bg-slate-900 h2, .bg-slate-900 h3, .bg-slate-900 h4, .bg-slate-900 h5, .bg-slate-900 h6,
+.bg-slate-950 h1, .bg-slate-950 h2, .bg-slate-950 h3, .bg-slate-950 h4, .bg-slate-950 h5, .bg-slate-950 h6 {
+  color: #ffffff !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1154,7 +1161,7 @@ img {
   flex-direction: column;
   justify-content: flex-end;
   padding: 2rem;
-  color: #ffffff;
+  color: #ffffff !important;
   transition: transform var(--transition-normal);
 }
 
@@ -1162,8 +1169,47 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.85) 100%);
-  transition: opacity var(--transition-normal);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.6) 40%, rgba(15, 23, 42, 0.92) 100%);
+  transition: opacity var(--transition-normal), background var(--transition-normal);
+}
+
+.category-card:hover::before {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.72) 40%, rgba(15, 23, 42, 0.96) 100%);
+}
+
+.category-card .card-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+}
+
+.category-card h1,
+.category-card h2,
+.category-card h3,
+.category-card h4,
+.category-card h5,
+.category-card h6 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.category-card p {
+  color: #f1f5f9 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+}
+
+.category-card .btn-outline {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.category-card .btn-outline:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 /* Unique Builder Category Cards */
@@ -1386,13 +1432,88 @@ img {
   .builder-category-thumb { height: 110px; width: 100%; object-fit: cover; }
 }
 
-/* Customizer Live Preview */
+/* Customizer Live Preview & Studio Contrast */
+.live-branding-studio,
+section.bg-slate-900 {
+  color: #f8fafc !important;
+}
+
+.live-branding-studio h1,
+.live-branding-studio h2,
+.live-branding-studio h3,
+.live-branding-studio h4,
+.live-branding-studio h5,
+.live-branding-studio h6,
+section.bg-slate-900 h1,
+section.bg-slate-900 h2,
+section.bg-slate-900 h3,
+section.bg-slate-900 h4,
+section.bg-slate-900 h5,
+section.bg-slate-900 h6 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.live-branding-studio p,
+section.bg-slate-900 p {
+  color: #cbd5e1 !important;
+}
+
+.live-branding-studio label,
+section.bg-slate-900 label {
+  color: #f1f5f9 !important;
+}
+
+.live-branding-studio .btn-outline,
+section.bg-slate-900 .btn-outline {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(15, 23, 42, 0.7) !important;
+}
+
+.live-branding-studio .btn-outline:hover,
+section.bg-slate-900 .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+}
+
+.live-branding-studio .badge-gold,
+section.bg-slate-900 .badge-gold {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fef08a !important;
+  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+}
+
+.live-branding-studio select,
+section.bg-slate-900 select,
+#brandingTechniqueSelect {
+  background-color: #020617 !important;
+  color: #ffffff !important;
+  border-color: #334155 !important;
+}
+
+.live-branding-studio select option,
+section.bg-slate-900 select option,
+#brandingTechniqueSelect option {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+.live-branding-studio .glass-panel,
+section.bg-slate-900 .glass-panel {
+  background: rgba(2, 6, 23, 0.85) !important;
+  border-color: #1e293b !important;
+}
+
+.live-branding-studio .customizer-canvas-box,
+section.bg-slate-900 .customizer-canvas-box,
 .customizer-canvas-box {
   width: 100%;
   height: 380px;
-  background-color: var(--bg-surface);
+  background-color: #0b1120 !important;
   border-radius: var(--radius-xl);
-  border: 1px solid var(--border-color);
+  border: 1px solid #1e293b !important;
   display: flex;
   align-items: center;
   justify-content: center;

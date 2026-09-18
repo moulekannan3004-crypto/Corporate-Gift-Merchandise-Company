@@ -48,7 +48,7 @@
       <div>
         <label class="block text-xs font-bold text-slate-400 mb-1">Corporate Work Email</label>
         <div class="relative">
-          <input type="email" id="loginEmail" required value="procurement@axiontech.com" class="w-full p-3 text-xs rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500 transition-colors ps-9">
+          <input type="email" id="loginEmail" required placeholder="name@company.com" class="w-full p-3 text-xs rounded-xl border border-slate-800 bg-slate-950 text-white placeholder-slate-500 outline-none focus:border-amber-500 transition-colors ps-9">
           <i class="bi bi-envelope text-slate-500 absolute left-3 top-3.5 text-xs"></i>
         </div>
       </div>
@@ -60,7 +60,7 @@
           <a href="#" class="text-[11px] text-amber-500 hover:underline">Forgot password?</a>
         </div>
         <div class="relative">
-          <input type="password" id="loginPassword" required value="••••••••••••" class="w-full p-3 text-xs rounded-xl border border-slate-800 bg-slate-950 text-white outline-none focus:border-amber-500 transition-colors ps-9">
+          <input type="password" id="loginPassword" required placeholder="Enter your password" class="w-full p-3 text-xs rounded-xl border border-slate-800 bg-slate-950 text-white placeholder-slate-500 outline-none focus:border-amber-500 transition-colors ps-9">
           <i class="bi bi-lock text-slate-500 absolute left-3 top-3.5 text-xs"></i>
         </div>
       </div>
@@ -105,13 +105,6 @@
         <i class="bi bi-building-add"></i> Register Account <i class="bi bi-arrow-right"></i>
       </a>
     </div>
-
-    <!-- Return Home Link -->
-    <div class="pt-3 mt-3 text-center text-xs text-slate-500">
-      <a href="index.html" class="text-slate-400 hover:text-white transition-colors">
-        <i class="bi bi-house me-1"></i> Return to Homepage
-      </a>
-    </div>
   </div>
 
   <script src="assets/js/theme.js"></script>
@@ -126,8 +119,12 @@
       const badge = document.getElementById('formBadge');
       const subtitle = document.getElementById('formSubtitle');
       const emailInput = document.getElementById('loginEmail');
+      const passwordInput = document.getElementById('loginPassword');
       const submitBtn = document.getElementById('submitLoginBtn');
       const contextFooter = document.getElementById('contextFooter');
+
+      emailInput.value = "";
+      passwordInput.value = "";
 
       if (mode === 'user') {
         userTab.className = "w-1/2 py-2.5 px-3 text-xs font-bold rounded-xl transition-all border border-amber-500 bg-amber-500/10 text-amber-500 flex items-center justify-center gap-1.5 shadow-sm";
@@ -137,9 +134,14 @@
         badge.className = "badge-gold text-[10px]";
         badge.innerHTML = `<i class="bi bi-person-check-fill"></i> Client Account`;
         subtitle.textContent = "Enter your corporate credentials to manage orders";
-        emailInput.value = "procurement@axiontech.com";
+        emailInput.placeholder = "name@company.com";
         submitBtn.innerHTML = `<span>Sign In to User Portal</span> <i class="bi bi-arrow-right"></i>`;
-        contextFooter.innerHTML = `Need an enterprise account? <a href="register.html" class="text-amber-500 font-bold hover:underline">Register Company <i class="bi bi-arrow-right"></i></a>`;
+        contextFooter.innerHTML = `
+          <div class="text-xs font-bold text-slate-400">Need a new enterprise corporate account?</div>
+          <a href="register.html" class="w-full py-3 px-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center gap-2 text-xs font-extrabold transition-all shadow-md">
+            <i class="bi bi-building-add"></i> Register Account <i class="bi bi-arrow-right"></i>
+          </a>
+        `;
       } else {
         adminTab.className = "w-1/2 py-2.5 px-3 text-xs font-bold rounded-xl transition-all border border-indigo-500 bg-indigo-500/10 text-indigo-400 flex items-center justify-center gap-1.5 shadow-sm";
         userTab.className = "w-1/2 py-2.5 px-3 text-xs font-bold rounded-xl transition-all border border-transparent bg-transparent text-slate-400 hover:text-white flex items-center justify-center gap-1.5";
@@ -148,9 +150,12 @@
         badge.className = "badge-indigo text-[10px]";
         badge.innerHTML = `<i class="bi bi-shield-check"></i> System Administrator`;
         subtitle.textContent = "Enter admin credentials to access platform dashboard";
-        emailInput.value = "admin@vanguardgift.com";
+        emailInput.placeholder = "admin@company.com";
         submitBtn.innerHTML = `<span>Sign In to Admin Dashboard</span> <i class="bi bi-arrow-right"></i>`;
-        contextFooter.innerHTML = `Platform Security Access. <a href="register.html" class="text-indigo-400 font-bold hover:underline">Register Company <i class="bi bi-arrow-right"></i></a>`;
+        contextFooter.innerHTML = `
+          <div class="text-xs font-bold text-slate-400">Restricted administrative portal</div>
+          <div class="text-[11px] text-slate-500">2FA authentication token verified upon sign-in</div>
+        `;
       }
     }
 
