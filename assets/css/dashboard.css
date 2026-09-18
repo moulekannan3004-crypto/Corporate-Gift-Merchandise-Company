@@ -150,6 +150,21 @@
   }
 }
 
+.dashboard-topbar .control-btn,
+.dashboard-topbar .rtl-toggle-btn,
+.dashboard-topbar .theme-toggle-btn,
+.dashboard-topbar #sidebarToggleBtn {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .dashboard-search {
   position: relative;
   width: 320px;
