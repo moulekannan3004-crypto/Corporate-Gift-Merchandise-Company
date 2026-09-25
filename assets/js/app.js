@@ -15,47 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceDetails();
 });
 
-// Auth Session & Navbar Login/Logout State Management
+// Auth Session Management
 function initAuthSession() {
-  const isLoggedIn = localStorage.getItem('vanguard_logged_in') === 'true';
-
   // Global Logout Handler
   window.handleUserLogout = function (e) {
     if (e) e.preventDefault();
     localStorage.removeItem('vanguard_logged_in');
+    localStorage.removeItem('vanguard_user_email');
     window.location.href = 'login.html';
   };
-
-  if (isLoggedIn) {
-    // Replace Login button in desktop nav actions across all pages
-    document.querySelectorAll('.nav-actions').forEach(container => {
-      const loginBtn = container.querySelector('a[href*="login.html"]');
-      if (loginBtn) {
-        const logoutBtn = document.createElement('button');
-        logoutBtn.id = 'navLogoutBtn';
-        logoutBtn.type = 'button';
-        logoutBtn.className = 'btn-outline text-xs !py-2 !px-3.5 font-bold border-rose-500/40 text-rose-500 hover:bg-rose-500 hover:text-white flex items-center gap-1.5 transition-all shadow-sm';
-        logoutBtn.title = 'Logout from Account';
-        logoutBtn.innerHTML = '<i class="bi bi-box-arrow-right font-bold"></i> Logout';
-        logoutBtn.addEventListener('click', window.handleUserLogout);
-        loginBtn.parentNode.replaceChild(logoutBtn, loginBtn);
-      }
-    });
-
-    // Replace Login link in mobile navigation drawer if present
-    const mobileDrawer = document.getElementById('mobileNavDrawer');
-    if (mobileDrawer) {
-      const mobileLogin = mobileDrawer.querySelector('a[href*="login.html"]');
-      if (mobileLogin) {
-        const mobileLogout = document.createElement('a');
-        mobileLogout.href = '#';
-        mobileLogout.className = 'mobile-nav-link text-rose-500 font-bold';
-        mobileLogout.innerHTML = 'Logout <i class="bi bi-box-arrow-right"></i>';
-        mobileLogout.addEventListener('click', window.handleUserLogout);
-        mobileLogin.parentNode.replaceChild(mobileLogout, mobileLogin);
-      }
-    }
-  }
 }
 
 // Mobile Navigation Toggle & Drawer Handler
